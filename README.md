@@ -5,9 +5,9 @@ Training, data and evaluation project for adapting
 a simulation-first single-qubit calibration loop. The experiment-executing runtime lives in the
 separate [quantum-calibration-agent](https://github.com/neonccx/quantum-calibration-agent) project.
 
-> Research status, 2026-09-05: the one-epoch LoRA, frozen full test/OOD comparison and fit-tool
-> verification completed. The minimal-instruction prompt ablation is still running. Results remain
-> simulation-only and do not establish hardware performance.
+> Research status, 2026-09-05: the one-epoch LoRA, frozen full test/OOD comparison, fit-tool
+> verification and minimal-instruction prompt ablation completed. Results remain simulation-only
+> and do not establish hardware performance.
 
 ## What the model learns
 

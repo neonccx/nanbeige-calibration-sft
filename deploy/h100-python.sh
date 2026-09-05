@@ -1,7 +1,7 @@
 #!/bin/sh
 # Server-local launcher: never change /usr/lib symlinks or global shell config.
 set -eu
-QCAL_BISHE=/home/caochuangxin/bishe
+QCAL_BISHE=${QCAL_BISHE:-$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)}
 QCAL_KERNEL_VERSION=$(sed -n 's/.*Kernel Module  *\([^ ]*\).*/\1/p' /proc/driver/nvidia/version)
 if [ "$QCAL_KERNEL_VERSION" = "575.57.08" ]; then
     QCAL_CUDA=/usr/lib/x86_64-linux-gnu/libcuda.so.575.57.08

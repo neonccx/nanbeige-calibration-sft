@@ -45,10 +45,17 @@ def metric_arm(directory: Path):
 
 def comparison(path: Path):
     report = load(path)
+    metadata = report.get("comparison")
+    if metadata and metadata.get("dimension") == "weights":
+        metadata = {
+            "dimension": "weights",
+            "baseline_adapter_present": metadata.get("baseline_adapter") is not None,
+            "candidate_adapter_present": metadata.get("candidate_adapter") is not None,
+        }
     return {
         "sample_count": report["sample_count"],
         "scope": report["scope"],
-        "comparison": report.get("comparison"),
+        "comparison": metadata,
         "metrics": {
             key: {field: value[field] for field in ("baseline", "adapted", "delta_percentage_points")}
             for key, value in report["metrics"].items()

@@ -1,0 +1,716 @@
+{
+  "closed_loop": {
+    "base": {
+      "acceptance_rate": 0.0,
+      "artifact_sha256": "59d143e68bf51580d435f4acee2589a5e91f28e8aa013779443b7f6d86ddc8a8",
+      "episode_results": [
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 7,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Policy/schema error: Prerequisite stages not calibrated for sq.piamp",
+          "seed": 2026090500,
+          "status": "invalid_action",
+          "tool_counts": {
+            "sq.s21": 5,
+            "sq.spectroscopy": 2
+          }
+        },
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 8,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Experiment budget exhausted before sq.s21",
+          "seed": 2026090501,
+          "status": "budget_exhausted",
+          "tool_counts": {
+            "sq.s21": 8
+          }
+        },
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 8,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Experiment budget exhausted before sq.s21",
+          "seed": 2026090502,
+          "status": "budget_exhausted",
+          "tool_counts": {
+            "sq.s21": 8
+          }
+        }
+      ],
+      "episodes": 3,
+      "mean_experiments_success": null,
+      "statuses": {
+        "accepted": 0,
+        "budget_exhausted": 2,
+        "escalated": 0,
+        "invalid_action": 1,
+        "policy_error": 0,
+        "tool_error": 0
+      }
+    },
+    "sft": {
+      "acceptance_rate": 0.6666666666666666,
+      "artifact_sha256": "bdfd939a1de9059faafa23d592073bed5d5524bec6f4df4c31fabe396f9053f7",
+      "episode_results": [
+        {
+          "consecutive_iq_passes": 2,
+          "experiment_count": 9,
+          "final_iq_metrics": {
+            "assignment_fidelity": 0.9873046875,
+            "f0": 0.998046875,
+            "f1": 0.9765625,
+            "snr": 3.51372580219243,
+            "visibility": 0.974609375
+          },
+          "final_iq_passed": true,
+          "reason": "Two consecutive independent IQ batches passed all gates",
+          "seed": 2026090500,
+          "status": "accepted",
+          "tool_counts": {
+            "sq.iqraw": 2,
+            "sq.piamp": 2,
+            "sq.ramsey_df": 1,
+            "sq.s21": 1,
+            "sq.spectroscopy": 1,
+            "sq.t1": 1,
+            "sq.t2_echo": 1
+          }
+        },
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 6,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Policy/schema error: Prerequisite stages not calibrated for sq.t2_echo",
+          "seed": 2026090501,
+          "status": "invalid_action",
+          "tool_counts": {
+            "sq.piamp": 2,
+            "sq.ramsey_df": 1,
+            "sq.s21": 1,
+            "sq.spectroscopy": 1,
+            "sq.t1": 1
+          }
+        },
+        {
+          "consecutive_iq_passes": 2,
+          "experiment_count": 9,
+          "final_iq_metrics": {
+            "assignment_fidelity": 0.9755859375,
+            "f0": 0.986328125,
+            "f1": 0.96484375,
+            "snr": 3.0746338561010753,
+            "visibility": 0.951171875
+          },
+          "final_iq_passed": true,
+          "reason": "Two consecutive independent IQ batches passed all gates",
+          "seed": 2026090502,
+          "status": "accepted",
+          "tool_counts": {
+            "sq.iqraw": 2,
+            "sq.piamp": 2,
+            "sq.ramsey_df": 1,
+            "sq.s21": 1,
+            "sq.spectroscopy": 1,
+            "sq.t1": 1,
+            "sq.t2_echo": 1
+          }
+        }
+      ],
+      "episodes": 3,
+      "mean_experiments_success": 9.0,
+      "statuses": {
+        "accepted": 2,
+        "budget_exhausted": 0,
+        "escalated": 0,
+        "invalid_action": 1,
+        "policy_error": 0,
+        "tool_error": 0
+      }
+    },
+    "sft_with_fit_tool": {
+      "acceptance_rate": 1.0,
+      "artifact_sha256": "2a82dffd09f52c6ef569105c78fd7c9d39efd1eb7e028e312328801114d553a6",
+      "episode_results": [
+        {
+          "consecutive_iq_passes": 2,
+          "experiment_count": 9,
+          "final_iq_metrics": {
+            "assignment_fidelity": 0.9873046875,
+            "f0": 0.998046875,
+            "f1": 0.9765625,
+            "snr": 3.51372580219243,
+            "visibility": 0.974609375
+          },
+          "final_iq_passed": true,
+          "reason": "Two consecutive independent IQ batches passed all gates",
+          "seed": 2026090500,
+          "status": "accepted",
+          "tool_counts": {
+            "sq.iqraw": 2,
+            "sq.piamp": 2,
+            "sq.ramsey_df": 1,
+            "sq.s21": 1,
+            "sq.spectroscopy": 1,
+            "sq.t1": 1,
+            "sq.t2_echo": 1
+          }
+        },
+        {
+          "consecutive_iq_passes": 2,
+          "experiment_count": 9,
+          "final_iq_metrics": {
+            "assignment_fidelity": 0.984375,
+            "f0": 0.99609375,
+            "f1": 0.97265625,
+            "snr": 3.2812550860844296,
+            "visibility": 0.96875
+          },
+          "final_iq_passed": true,
+          "reason": "Two consecutive independent IQ batches passed all gates",
+          "seed": 2026090501,
+          "status": "accepted",
+          "tool_counts": {
+            "sq.iqraw": 2,
+            "sq.piamp": 2,
+            "sq.ramsey_df": 1,
+            "sq.s21": 1,
+            "sq.spectroscopy": 1,
+            "sq.t1": 1,
+            "sq.t2_echo": 1
+          }
+        },
+        {
+          "consecutive_iq_passes": 2,
+          "experiment_count": 9,
+          "final_iq_metrics": {
+            "assignment_fidelity": 0.9755859375,
+            "f0": 0.986328125,
+            "f1": 0.96484375,
+            "snr": 3.0746338561010753,
+            "visibility": 0.951171875
+          },
+          "final_iq_passed": true,
+          "reason": "Two consecutive independent IQ batches passed all gates",
+          "seed": 2026090502,
+          "status": "accepted",
+          "tool_counts": {
+            "sq.iqraw": 2,
+            "sq.piamp": 2,
+            "sq.ramsey_df": 1,
+            "sq.s21": 1,
+            "sq.spectroscopy": 1,
+            "sq.t1": 1,
+            "sq.t2_echo": 1
+          }
+        }
+      ],
+      "episodes": 3,
+      "mean_experiments_success": 9.0,
+      "statuses": {
+        "accepted": 3,
+        "budget_exhausted": 0,
+        "escalated": 0,
+        "invalid_action": 0,
+        "policy_error": 0,
+        "tool_error": 0
+      }
+    }
+  },
+  "fit_tool": {
+    "known_failure_probe_sha256": "50cfe2e981af295bbe8b197430204bd464a9c6e1e46af8591835b185b852dd5a",
+    "token_audit": {
+      "all_passed": true,
+      "manifest_sha256": "604bcaa4bb3adce3b07623d25f774ba3d1e3d3e96d5f8cab8fc20bb9782af387",
+      "max_tokens": 7724,
+      "minimum_target_tokens": 52,
+      "protocol": "calibration-step-fit-0.1",
+      "samples": 2705,
+      "tokenizer_checked": true,
+      "tokenizer_sha256": "3edfa64a0826a77e9412b9008f1febf3fe906a68fd616b6de4cd15897a8c8518"
+    }
+  },
+  "full_context": {
+    "ood": {
+      "base": {
+        "arguments_correct_rate": 0.0899581589958159,
+        "artifact_sha256": {
+          "controller_score.json": "4b0495b49c16ab3bac07a799a14b2fc1db8b281ef80304ed59b8771b4ed35fdf",
+          "metrics.json": "d5913cb90c43cb911f56cf2630aa4a761190309546f82ec90a55fa50d7fdc8ee",
+          "predictions.jsonl": "c50033c49462026163336c6c020d559ca04697a4fc20f091c70d637327575bb9"
+        },
+        "controller_executable_rate": 0.5230125523012552,
+        "dataset_sha256": "102a079771076f850aeb48fab59ea5897ba60693279e173283be69470a8edcfd",
+        "mean_seconds": 7.719407960185445,
+        "next_tool_correct_rate": 0.6631799163179917,
+        "sample_count": 478,
+        "valid_rate": 0.9163179916317992
+      },
+      "comparison": {
+        "artifact_sha256": "0e7912c85dc13a2374ebffa72de6379076a244bee6e6c546163e9e9f1a071c8c",
+        "comparison": null,
+        "metrics": {
+          "arguments_correct": {
+            "adapted": 0.899581589958159,
+            "baseline": 0.0899581589958159,
+            "delta_percentage_points": 80.9623430962343
+          },
+          "controller_executable": {
+            "adapted": 0.9225941422594143,
+            "baseline": 0.5230125523012552,
+            "delta_percentage_points": 39.9581589958159
+          },
+          "next_tool_correct": {
+            "adapted": 0.9288702928870293,
+            "baseline": 0.6631799163179917,
+            "delta_percentage_points": 26.569037656903767
+          },
+          "valid": {
+            "adapted": 1.0,
+            "baseline": 0.9163179916317992,
+            "delta_percentage_points": 8.368200836820083
+          }
+        },
+        "sample_count": 478,
+        "scope": "Paired frozen-context diagnostic; does not measure closed-loop acceptance"
+      },
+      "sft": {
+        "arguments_correct_rate": 0.899581589958159,
+        "artifact_sha256": {
+          "controller_score.json": "dc57ee4379945d7809e8f376326921414a9d034de2c563df0e2953ae0ef6d618",
+          "metrics.json": "70bc4c4226f16a068b509f72fbcfc23ad249fa1b805e9c22f3b0c95c3516b751",
+          "predictions.jsonl": "2fb3d621bc7320155444580475f5833626ed4625d6f5724e69c0918b41f6f147"
+        },
+        "controller_executable_rate": 0.9225941422594143,
+        "dataset_sha256": "102a079771076f850aeb48fab59ea5897ba60693279e173283be69470a8edcfd",
+        "mean_seconds": 16.202801513145012,
+        "next_tool_correct_rate": 0.9288702928870293,
+        "sample_count": 478,
+        "valid_rate": 1.0
+      }
+    },
+    "test": {
+      "base": {
+        "arguments_correct_rate": 0.09747292418772563,
+        "artifact_sha256": {
+          "controller_score.json": "2194eabc9b44dc69197603e24972524912c06dc0e4719c676be38a4945a44113",
+          "metrics.json": "0f4e22d59fe142e2b467c8f1b0289d3f385f3ae5bd900899e8a1809957231f7a",
+          "predictions.jsonl": "ef4ccd3f3b3005f2130af14c3e2dfc8acfd764c97dcc0d7b71c7221d8150a553"
+        },
+        "controller_executable_rate": 0.4981949458483754,
+        "dataset_sha256": "418a3b52ff4e46c804e7e454d05c795e86ece7b23b791e7390254027493d8abf",
+        "mean_seconds": 6.678830265623117,
+        "next_tool_correct_rate": 0.5956678700361011,
+        "sample_count": 277,
+        "valid_rate": 0.9530685920577617
+      },
+      "comparison": {
+        "artifact_sha256": "7d7a38f262d85dacb97009a3720b891b2655888fc8e97e30a106b41688480765",
+        "comparison": null,
+        "metrics": {
+          "arguments_correct": {
+            "adapted": 0.9494584837545126,
+            "baseline": 0.09747292418772563,
+            "delta_percentage_points": 85.1985559566787
+          },
+          "controller_executable": {
+            "adapted": 0.9819494584837545,
+            "baseline": 0.4981949458483754,
+            "delta_percentage_points": 48.375451263537904
+          },
+          "next_tool_correct": {
+            "adapted": 1.0,
+            "baseline": 0.5956678700361011,
+            "delta_percentage_points": 40.43321299638989
+          },
+          "valid": {
+            "adapted": 1.0,
+            "baseline": 0.9530685920577617,
+            "delta_percentage_points": 4.693140794223827
+          }
+        },
+        "sample_count": 277,
+        "scope": "Paired frozen-context diagnostic; does not measure closed-loop acceptance"
+      },
+      "sft": {
+        "arguments_correct_rate": 0.9494584837545126,
+        "artifact_sha256": {
+          "controller_score.json": "7d6e48c60d31f54a084a042050b9238c75cedece0b7449d5d5cb9eb7c23ba249",
+          "metrics.json": "0a2674ddd9a639ce0f614fa97622332fbc91a86b104beb1c6c63f2145e6967b0",
+          "predictions.jsonl": "d944e592678e5a157b4a0651f0036451c6e4a2e987859fa043fdb54f16023652"
+        },
+        "controller_executable_rate": 0.9819494584837545,
+        "dataset_sha256": "418a3b52ff4e46c804e7e454d05c795e86ece7b23b791e7390254027493d8abf",
+        "mean_seconds": 7.755865723998093,
+        "next_tool_correct_rate": 1.0,
+        "sample_count": 277,
+        "valid_rate": 1.0
+      }
+    }
+  },
+  "prompt_ablation": {
+    "fresh_base": {
+      "acceptance_rate": 0.0,
+      "artifact_sha256": "3d7bcb72e0acf0aa230baddfb1684c06a2e960375f892a176d9b5cb470e4479a",
+      "episode_results": [
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 0,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Policy/schema error: Prerequisite stages not calibrated for sq.t1",
+          "seed": 2026090500,
+          "status": "invalid_action",
+          "tool_counts": {}
+        },
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 0,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Policy/schema error: Prerequisite stages not calibrated for sq.t1",
+          "seed": 2026090501,
+          "status": "invalid_action",
+          "tool_counts": {}
+        },
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 0,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Policy/schema error: Prerequisite stages not calibrated for sq.t1",
+          "seed": 2026090502,
+          "status": "invalid_action",
+          "tool_counts": {}
+        }
+      ],
+      "episodes": 3,
+      "mean_experiments_success": null,
+      "statuses": {
+        "accepted": 0,
+        "budget_exhausted": 0,
+        "escalated": 0,
+        "invalid_action": 3,
+        "policy_error": 0,
+        "tool_error": 0
+      }
+    },
+    "fresh_sft": {
+      "acceptance_rate": 0.0,
+      "artifact_sha256": "a6db51051835364699efe8642b07085d12277befba1f76d73d98a75aaf78fd79",
+      "episode_results": [
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 0,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Policy/schema error: Prerequisite stages not calibrated for sq.iqraw",
+          "seed": 2026090500,
+          "status": "invalid_action",
+          "tool_counts": {}
+        },
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 0,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Policy/schema error: Prerequisite stages not calibrated for sq.iqraw",
+          "seed": 2026090501,
+          "status": "invalid_action",
+          "tool_counts": {}
+        },
+        {
+          "consecutive_iq_passes": 0,
+          "experiment_count": 0,
+          "final_iq_metrics": null,
+          "final_iq_passed": null,
+          "reason": "Policy/schema error: Prerequisite stages not calibrated for sq.iqraw",
+          "seed": 2026090502,
+          "status": "invalid_action",
+          "tool_counts": {}
+        }
+      ],
+      "episodes": 3,
+      "mean_experiments_success": null,
+      "statuses": {
+        "accepted": 0,
+        "budget_exhausted": 0,
+        "escalated": 0,
+        "invalid_action": 3,
+        "policy_error": 0,
+        "tool_error": 0
+      }
+    },
+    "ood": {
+      "base": {
+        "arguments_correct_rate": 0.02301255230125523,
+        "artifact_sha256": {
+          "controller_score.json": "75512c9d4450bf6c30f3310916c720cc8c69eaba48faf9ed2ff353b6c8d43ddf",
+          "metrics.json": "77c281142aec01479f856e59350284dbdb26e56d05e38263c0684043380ce432",
+          "predictions.jsonl": "6f8dac5c665a7291957d8e0fe8ac7fb95bdf7900a629467fad5546adc6b87365"
+        },
+        "controller_executable_rate": 0.4246861924686193,
+        "dataset_sha256": "102a079771076f850aeb48fab59ea5897ba60693279e173283be69470a8edcfd",
+        "mean_seconds": 4.381252016417588,
+        "next_tool_correct_rate": 0.3472803347280335,
+        "sample_count": 478,
+        "valid_rate": 0.7510460251046025
+      },
+      "base_prompt_comparison": {
+        "artifact_sha256": "2270d7f4e1f55fee7a53c81b3cacf41d0ce8bc3c59805e5739f134892e75b9fb",
+        "comparison": {
+          "baseline_hash_note": "Legacy skill evaluation predates explicit prompt hashing",
+          "baseline_profile": "skill",
+          "baseline_system_prompt_sha256": null,
+          "candidate_profile": "minimal",
+          "candidate_system_prompt_sha256": "ed78fbec86e0be67fbb6ccaaf9000ae1384f6a47ed3e8954e570a88476b441ec",
+          "dimension": "system_prompt"
+        },
+        "metrics": {
+          "arguments_correct": {
+            "adapted": 0.02301255230125523,
+            "baseline": 0.0899581589958159,
+            "delta_percentage_points": -6.694560669456067
+          },
+          "controller_executable": {
+            "adapted": 0.4246861924686193,
+            "baseline": 0.5230125523012552,
+            "delta_percentage_points": -9.832635983263598
+          },
+          "next_tool_correct": {
+            "adapted": 0.3472803347280335,
+            "baseline": 0.6631799163179917,
+            "delta_percentage_points": -31.589958158995817
+          },
+          "valid": {
+            "adapted": 0.7510460251046025,
+            "baseline": 0.9163179916317992,
+            "delta_percentage_points": -16.527196652719667
+          }
+        },
+        "sample_count": 478,
+        "scope": "Paired frozen-context diagnostic; does not measure closed-loop acceptance"
+      },
+      "minimal_training_comparison": {
+        "artifact_sha256": "3a7b7697c6bd76e310e653f586071227bae44108550c58212e7cb7ae018ffc7a",
+        "comparison": {
+          "baseline_adapter_present": false,
+          "candidate_adapter_present": true,
+          "dimension": "weights"
+        },
+        "metrics": {
+          "arguments_correct": {
+            "adapted": 0.15481171548117154,
+            "baseline": 0.02301255230125523,
+            "delta_percentage_points": 13.179916317991632
+          },
+          "controller_executable": {
+            "adapted": 0.2907949790794979,
+            "baseline": 0.4246861924686193,
+            "delta_percentage_points": -13.389121338912133
+          },
+          "next_tool_correct": {
+            "adapted": 0.4330543933054393,
+            "baseline": 0.3472803347280335,
+            "delta_percentage_points": 8.577405857740585
+          },
+          "valid": {
+            "adapted": 0.8221757322175732,
+            "baseline": 0.7510460251046025,
+            "delta_percentage_points": 7.112970711297071
+          }
+        },
+        "sample_count": 478,
+        "scope": "Paired frozen-context diagnostic; does not measure closed-loop acceptance"
+      },
+      "sft": {
+        "arguments_correct_rate": 0.15481171548117154,
+        "artifact_sha256": {
+          "controller_score.json": "2428cbeb560bc111246f7d45d4c11f175e0f1de0ed11ecc4cf3d37022d0aab24",
+          "metrics.json": "2bdc7c48e79771292c47a5e64ef1d2c474599fa8f8ad4933e09dd0025454236b",
+          "predictions.jsonl": "4cdd19289aeef4981fd7a51e9109e3af3af8bb3fef8a55e70e19cf69b7500004"
+        },
+        "controller_executable_rate": 0.2907949790794979,
+        "dataset_sha256": "102a079771076f850aeb48fab59ea5897ba60693279e173283be69470a8edcfd",
+        "mean_seconds": 6.204799899194296,
+        "next_tool_correct_rate": 0.4330543933054393,
+        "sample_count": 478,
+        "valid_rate": 0.8221757322175732
+      },
+      "sft_prompt_comparison": {
+        "artifact_sha256": "50d76891ca947f171bbff844726a3a9eb04dc9be4ddf1ea0583e6f45799901d1",
+        "comparison": {
+          "baseline_hash_note": "Legacy skill evaluation predates explicit prompt hashing",
+          "baseline_profile": "skill",
+          "baseline_system_prompt_sha256": null,
+          "candidate_profile": "minimal",
+          "candidate_system_prompt_sha256": "ed78fbec86e0be67fbb6ccaaf9000ae1384f6a47ed3e8954e570a88476b441ec",
+          "dimension": "system_prompt"
+        },
+        "metrics": {
+          "arguments_correct": {
+            "adapted": 0.15481171548117154,
+            "baseline": 0.899581589958159,
+            "delta_percentage_points": -74.47698744769875
+          },
+          "controller_executable": {
+            "adapted": 0.2907949790794979,
+            "baseline": 0.9225941422594143,
+            "delta_percentage_points": -63.17991631799163
+          },
+          "next_tool_correct": {
+            "adapted": 0.4330543933054393,
+            "baseline": 0.9288702928870293,
+            "delta_percentage_points": -49.58158995815899
+          },
+          "valid": {
+            "adapted": 0.8221757322175732,
+            "baseline": 1.0,
+            "delta_percentage_points": -17.782426778242677
+          }
+        },
+        "sample_count": 478,
+        "scope": "Paired frozen-context diagnostic; does not measure closed-loop acceptance"
+      }
+    },
+    "test": {
+      "base": {
+        "arguments_correct_rate": 0.02527075812274368,
+        "artifact_sha256": {
+          "controller_score.json": "f7f26d8e1c43c2ff3419abfde1bd9627812742464f6e8e670192a1e0d3347c4e",
+          "metrics.json": "d4dbe099134609de30878c9b74de8b2d03231a59cf61dc78531f7293d695db7f",
+          "predictions.jsonl": "2743bd9e448a591075bdee1f4dc16c43aab06428ed03f1c82537d4141f364859"
+        },
+        "controller_executable_rate": 0.36823104693140796,
+        "dataset_sha256": "418a3b52ff4e46c804e7e454d05c795e86ece7b23b791e7390254027493d8abf",
+        "mean_seconds": 15.059012136748649,
+        "next_tool_correct_rate": 0.27075812274368233,
+        "sample_count": 277,
+        "valid_rate": 0.7148014440433214
+      },
+      "base_prompt_comparison": {
+        "artifact_sha256": "791b6a8969766568d321947fc8d52f1dc9ef18a36231b81836074996a1c3c8a6",
+        "comparison": {
+          "baseline_hash_note": "Legacy skill evaluation predates explicit prompt hashing",
+          "baseline_profile": "skill",
+          "baseline_system_prompt_sha256": null,
+          "candidate_profile": "minimal",
+          "candidate_system_prompt_sha256": "ed78fbec86e0be67fbb6ccaaf9000ae1384f6a47ed3e8954e570a88476b441ec",
+          "dimension": "system_prompt"
+        },
+        "metrics": {
+          "arguments_correct": {
+            "adapted": 0.02527075812274368,
+            "baseline": 0.09747292418772563,
+            "delta_percentage_points": -7.2202166064981945
+          },
+          "controller_executable": {
+            "adapted": 0.36823104693140796,
+            "baseline": 0.4981949458483754,
+            "delta_percentage_points": -12.99638989169675
+          },
+          "next_tool_correct": {
+            "adapted": 0.27075812274368233,
+            "baseline": 0.5956678700361011,
+            "delta_percentage_points": -32.49097472924188
+          },
+          "valid": {
+            "adapted": 0.7148014440433214,
+            "baseline": 0.9530685920577617,
+            "delta_percentage_points": -23.826714801444044
+          }
+        },
+        "sample_count": 277,
+        "scope": "Paired frozen-context diagnostic; does not measure closed-loop acceptance"
+      },
+      "minimal_training_comparison": {
+        "artifact_sha256": "a74198bd012389c6e343d7803ae53ece9f0ee560a8de871cf337c58b417a5d0f",
+        "comparison": {
+          "baseline_adapter_present": false,
+          "candidate_adapter_present": true,
+          "dimension": "weights"
+        },
+        "metrics": {
+          "arguments_correct": {
+            "adapted": 0.16606498194945848,
+            "baseline": 0.02527075812274368,
+            "delta_percentage_points": 14.07942238267148
+          },
+          "controller_executable": {
+            "adapted": 0.2996389891696751,
+            "baseline": 0.36823104693140796,
+            "delta_percentage_points": -6.859205776173285
+          },
+          "next_tool_correct": {
+            "adapted": 0.4007220216606498,
+            "baseline": 0.27075812274368233,
+            "delta_percentage_points": 12.99638989169675
+          },
+          "valid": {
+            "adapted": 0.8050541516245487,
+            "baseline": 0.7148014440433214,
+            "delta_percentage_points": 9.025270758122744
+          }
+        },
+        "sample_count": 277,
+        "scope": "Paired frozen-context diagnostic; does not measure closed-loop acceptance"
+      },
+      "sft": {
+        "arguments_correct_rate": 0.16606498194945848,
+        "artifact_sha256": {
+          "controller_score.json": "6001583731c995a3e422ccc58419a0617b5b77b7c0bad6ce02013d41291b3a58",
+          "metrics.json": "06550c39dfe8107d0859a480e56e7cd547a8f143525c824198279b8462d745eb",
+          "predictions.jsonl": "4174361cd32a515f11de252cefdcf19b306175a55674e0d832d8329fd48228c4"
+        },
+        "controller_executable_rate": 0.2996389891696751,
+        "dataset_sha256": "418a3b52ff4e46c804e7e454d05c795e86ece7b23b791e7390254027493d8abf",
+        "mean_seconds": 4.077186600143755,
+        "next_tool_correct_rate": 0.4007220216606498,
+        "sample_count": 277,
+        "valid_rate": 0.8050541516245487
+      },
+      "sft_prompt_comparison": {
+        "artifact_sha256": "bab9a7654ac514d2efb65cd94c7eb2507c0ca401047b22d45a31e1f8e458562d",
+        "comparison": {
+          "baseline_hash_note": "Legacy skill evaluation predates explicit prompt hashing",
+          "baseline_profile": "skill",
+          "baseline_system_prompt_sha256": null,
+          "candidate_profile": "minimal",
+          "candidate_system_prompt_sha256": "ed78fbec86e0be67fbb6ccaaf9000ae1384f6a47ed3e8954e570a88476b441ec",
+          "dimension": "system_prompt"
+        },
+        "metrics": {
+          "arguments_correct": {
+            "adapted": 0.16606498194945848,
+            "baseline": 0.9494584837545126,
+            "delta_percentage_points": -78.33935018050542
+          },
+          "controller_executable": {
+            "adapted": 0.2996389891696751,
+            "baseline": 0.9819494584837545,
+            "delta_percentage_points": -68.23104693140795
+          },
+          "next_tool_correct": {
+            "adapted": 0.4007220216606498,
+            "baseline": 1.0,
+            "delta_percentage_points": -59.92779783393502
+          },
+          "valid": {
+            "adapted": 0.8050541516245487,
+            "baseline": 1.0,
+            "delta_percentage_points": -19.494584837545126
+          }
+        },
+        "sample_count": 277,
+        "scope": "Paired frozen-context diagnostic; does not measure closed-loop acceptance"
+      }
+    }
+  },
+  "schema": "qcal-public-evidence-0.1",
+  "scope": "Synthetic frozen-context and reduced-model evidence; not hardware success"
+}

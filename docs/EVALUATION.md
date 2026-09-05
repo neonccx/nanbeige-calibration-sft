@@ -54,12 +54,32 @@ accepted in nine experiments. Every accepted episode ended with two independent 
 This small 3/3 result demonstrates the intended tool boundary; it is not a statistical hardware
 success estimate.
 
-## Remaining prompt ablation
+## Prompt ablation
 
-The B0/F0 minimal-instruction prompt ablation is still running in the ordered H100 queue. It keeps
-the checkpoint, adapter, rows, native tools, controller, simulator, seeds and decoding fixed while
-changing only the system instruction. Its result will be added only after the process reaches a
-terminal state and the artifacts are copied from the server.
+The B0/F0 ablation kept the checkpoint, adapter, rows, native tools, controller, simulator, seeds
+and decoding fixed while replacing the full workflow instruction with a minimal safety-only system
+instruction.
+
+| Split / minimal-prompt policy | Valid | Next tool | Arguments | Controller-executable | Mean latency |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| test base (277) | 0.7148 | 0.2708 | 0.0253 | 0.3682 | 15.06 s |
+| test SFT (277) | 0.8051 | 0.4007 | 0.1661 | 0.2996 | 4.08 s |
+| OOD base (478) | 0.7510 | 0.3473 | 0.0230 | 0.4247 | 4.38 s |
+| OOD SFT (478) | 0.8222 | 0.4331 | 0.1548 | 0.2908 | 6.20 s |
+
+Both minimal-prompt fresh-loop arms ended with 0/3 accepted episodes; all six episodes were rejected
+as invalid actions by the controller. The frozen LoRA improves validity, next-tool and argument
+agreement over the base model under the minimal prompt, but it does not preserve the deployed
+skill-prompt controller-executable rate. This establishes that the current system is the combination
+of adapted weights, the complete workflow instruction, registered numerical tools and the strict
+controller. The adapter must not be advertised as a prompt-independent autonomous calibrator.
+
+The failed first comparison attempt is preserved in the private status history: it incorrectly used
+the weight-only comparator for a prompt-only contrast. No inference was rerun. A corrected comparator
+then verified identical weights for prompt comparisons and identical prompts for weight comparisons.
+
+The path-free machine-readable summary, including source-artifact hashes, is
+[`evaluation/public_evidence_20260905.json`](../evaluation/public_evidence_20260905.json).
 
 ## Closed-loop simulation
 
