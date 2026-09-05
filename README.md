@@ -106,5 +106,6 @@ QCalEval plot scores must never be merged with closed-loop IQ acceptance.
 - [Dataset v2 specification](docs/DATASET_V2.md)
 - [Training v2](docs/TRAINING_V2.md)
 - [Evaluation protocol](docs/EVALUATION.md)
+- [LoRA adapter release](docs/ADAPTER_RELEASE.md)
 - [H100 deployment](docs/H100_DEPLOYMENT.md)
 - [Legacy v1.1 notes](docs/archive/DATASET_V1_1.md)
