@@ -25,22 +25,41 @@ This subset is an infrastructure and behavior diagnostic, not the final test-set
 outputs count as failures. Latency is specific to the recorded server, software stack and decode
 configuration and should not be generalized as a model property.
 
-## Ordered frozen evaluation
+## Frozen full-split results
 
-The final adapter is frozen. The following jobs use new output directories and run in this order so
-that they do not contend for GPU memory:
+The final adapter was frozen before these comparisons. Each arm used the same rows, native tool
+schema, full workflow instruction and reference HF decoder. Invalid outputs count as failures.
 
-1. full 277-example test comparison, base versus SFT;
-2. full 478-example OOD comparison, base versus SFT;
-3. deterministic fit-tool verification, including known Ramsey arithmetic failures and three new
-   simulator seeds;
-4. B0/F0 minimal-instruction prompt ablation on the same frozen test/OOD rows and three fresh
-   closed-loop seeds.
+| Split / policy | Valid | Next tool | Arguments | Controller-executable | Mean latency |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| test base (277) | 0.9531 | 0.5957 | 0.0975 | 0.4982 | 6.68 s |
+| test SFT (277) | 1.0000 | 1.0000 | 0.9495 | 0.9819 | 7.76 s |
+| OOD base (478) | 0.9163 | 0.6632 | 0.0900 | 0.5230 | 7.72 s |
+| OOD SFT (478) | 1.0000 | 0.9289 | 0.8996 | 0.9226 | 16.20 s |
 
-Each arm preserves predictions, failures, hashes, timings, controller scores and the exact system
-prompt profile. Results will be added only after every ordered process reaches a terminal state and
-the artifacts are copied from the H100 host. Until then, no full-split improvement or
-generalization claim is made.
+These are frozen-context imitation and executability metrics, not closed-loop or hardware success.
+The OOD latency increase is reported as observed and has not yet been attributed to one cause.
+
+## Closed-loop and fit-tool verification
+
+On three fresh simulator seeds, the original base policy accepted 0/3 episodes. The original SFT
+policy accepted 2/3 in nine experiments each; its remaining episode was safely rejected after it
+requested T2 Echo before the controller had accepted T1. These nonzero process return codes are
+scientific outcomes, not missing artifacts.
+
+The registered `calibration.step_from_fit` path was then tested on the same three seeds. Two known
+Ramsey arithmetic failures produced controller-executable actions, the complete 2,705-row optional
+curriculum passed tokenizer and target-boundary audit, and all three fresh closed loops were
+accepted in nine experiments. Every accepted episode ended with two independent held-out IQ passes.
+This small 3/3 result demonstrates the intended tool boundary; it is not a statistical hardware
+success estimate.
+
+## Remaining prompt ablation
+
+The B0/F0 minimal-instruction prompt ablation is still running in the ordered H100 queue. It keeps
+the checkpoint, adapter, rows, native tools, controller, simulator, seeds and decoding fixed while
+changing only the system instruction. Its result will be added only after the process reaches a
+terminal state and the artifacts are copied from the server.
 
 ## Closed-loop simulation
 

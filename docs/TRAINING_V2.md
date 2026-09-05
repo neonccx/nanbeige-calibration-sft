@@ -74,9 +74,10 @@ Report separately: native schema validity, controller-executable arguments/prere
 next-tool agreement, argument agreement within declared tolerances, measured closed-loop acceptance,
 safe escalation, experiment count and latency. Invalid outputs count as failures.
 
-Re-evaluate the same frozen subset after SFT; then evaluate the complete test/OOD split and fresh
-closed loops. A rule-policy IQ plot is not language-model success. Attractive plots, loss reduction
-and teacher agreement do not independently establish full calibration capability.
+The complete frozen test/OOD comparison and fresh closed loops are reported in
+[`EVALUATION.md`](EVALUATION.md). A rule-policy IQ plot is not language-model success. Attractive
+plots, loss reduction and teacher agreement do not independently establish full calibration
+capability.
 
 The B0 minimal-instruction, B1 workflow-instruction, SFT and Ising comparison arms remain distinct;
 this first native baseline uses the frozen domain workflow prompt (B1). Ising's plot-understanding
