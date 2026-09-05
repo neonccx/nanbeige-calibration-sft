@@ -1,0 +1,10 @@
+{
+  "all_passed": true,
+  "tokenizer_checked": true,
+  "samples": 2705,
+  "max_tokens": 7724,
+  "minimum_target_tokens": 52,
+  "protocol": "calibration-step-fit-0.1",
+  "tokenizer_sha256": "3edfa64a0826a77e9412b9008f1febf3fe906a68fd616b6de4cd15897a8c8518",
+  "manifest_sha256": "604bcaa4bb3adce3b07623d25f774ba3d1e3d3e96d5f8cab8fc20bb9782af387"
+}

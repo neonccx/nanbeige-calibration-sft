@@ -1,0 +1,40 @@
+{
+  "protocol": "calibration-step-fit-0.1",
+  "training_ready": false,
+  "pending": [
+    "model selection after protocol probe"
+  ],
+  "token_audit": {
+    "all_passed": true,
+    "samples": 2705,
+    "max_tokens": 7724,
+    "minimum_target_tokens": 52,
+    "report": "token_audit_v2.json"
+  },
+  "scope": "Format revision of existing executed actions; not new independent experiments",
+  "source_manifest_sha256": "5172df7fd733cf5677ff1989cde532c5cb2c192c05390358a44e5e52e02cca5d",
+  "split_sha256": {
+    "train": "12594d4a174949d19827bdf3cf799e0ec63d21caa16bda1034595a6d386840f9",
+    "validation": "13baa17dc6e8ead4a0f353c3ec0814f8b41bb972ae9bb3c067596d779768a217",
+    "test": "4902b96da46e9448662070ed576d24a505b2644e08355fab87c24dc2f33a439a",
+    "ood": "f25f499afa4b6116c7883c167eb515b296add212933bfb0f16dfa8696450ef5d"
+  },
+  "counts": {
+    "train": {
+      "calibration.step": 914,
+      "calibration.step_from_fit": 756
+    },
+    "validation": {
+      "calibration.step": 154,
+      "calibration.step_from_fit": 126
+    },
+    "test": {
+      "calibration.step": 150,
+      "calibration.step_from_fit": 127
+    },
+    "ood": {
+      "calibration.step": 224,
+      "calibration.step_from_fit": 254
+    }
+  }
+}

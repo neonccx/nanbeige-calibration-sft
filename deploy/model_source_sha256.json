@@ -1,0 +1,8 @@
+{
+  "model_id": "Nanbeige/Nanbeige4.2-3B",
+  "provenance": "SHA-256 of existing source server files before migration; not an upstream signed manifest",
+  "files": {
+    "model-00001-of-00002.safetensors": "09d265d5ec837bc64462796b7f8c110be9a135a55ed7a6eb5d07e0e90c976a94",
+    "model-00002-of-00002.safetensors": "31019e7870a044f44bc3f7e981f8c5ecd42d341e5ca6cfdbfd07fb95d95be389"
+  }
+}

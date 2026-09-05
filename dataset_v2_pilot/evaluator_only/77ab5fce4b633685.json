@@ -1,0 +1,51 @@
+{
+  "truth": {
+    "resonance_hz": 6500159297.272625,
+    "loaded_q": 5773.333178191303,
+    "depth": 0.4065985684745419
+  },
+  "trace": [
+    {
+      "artifact": {
+        "artifact_path": "artifacts/77ab5fce4b633685/scan_0.json",
+        "sha256": "79ed0e1b97818ce784ff4cceb7461ff7fa7117fabbfa372d7f697510a917c9fb"
+      },
+      "analysis": {
+        "reliable": true,
+        "reason": "quality_pass",
+        "fit": {
+          "resonance_hz": 6500160920.161464,
+          "loaded_q": 5776.0672171673805,
+          "depth": 0.40656404525476664,
+          "linewidth_hz": 1125361.0243388377
+        },
+        "diagnostics": {
+          "fit_r2": 0.9993135727250281,
+          "residual_rms": 0.0019359742475057702,
+          "degrees_of_freedom": 479,
+          "checks": {
+            "fit_r2_at_least_0_95": true,
+            "not_at_scan_edge": true,
+            "at_least_four_linewidths": true,
+            "at_least_five_points_per_linewidth": true,
+            "not_at_fit_bound": true
+          }
+        },
+        "uncertainty": {
+          "status": "not_implemented",
+          "note": "Pilot is not production-ready"
+        },
+        "analysis_version": "ideal-notch-pilot-0.1",
+        "model_source": "https://arxiv.org/html/1410.3365v2#S1.E1"
+      }
+    }
+  ],
+  "outcome": {
+    "status": "s21_stage_complete",
+    "next_stage": "spectroscopy",
+    "proposed_updates": {
+      "readout_frequency_hz": 6500160920.161464
+    },
+    "reason": "The numerical S21 checks pass. Propose spectroscopy; full IQ acceptance has not been evaluated."
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "truth": {
+    "resonance_hz": 6500950691.662699,
+    "loaded_q": 3920.12145930303,
+    "depth": 0.601677454875591
+  },
+  "trace": [
+    {
+      "artifact": {
+        "artifact_path": "artifacts/bf7cab19e41fa752/scan_0.json",
+        "sha256": "36fa519edefefdece8e178cc2ea0c9d5c67bc4803b5e3f9d1fcf0cf3d8979694"
+      },
+      "analysis": {
+        "reliable": false,
+        "reason": "quality_rejected",
+        "fit": {
+          "resonance_hz": 6500952241.80829,
+          "loaded_q": 3926.879972536831,
+          "depth": 0.6022797608494879,
+          "linewidth_hz": 1655500.6232106872
+        },
+        "diagnostics": {
+          "fit_r2": 0.9996356312825799,
+          "residual_rms": 0.0019875192815009203,
+          "degrees_of_freedom": 479,
+          "checks": {
+            "fit_r2_at_least_0_95": true,
+            "not_at_scan_edge": false,
+            "at_least_four_linewidths": true,
+            "at_least_five_points_per_linewidth": true,
+            "not_at_fit_bound": true
+          }
+        },
+        "uncertainty": {
+          "status": "not_implemented",
+          "note": "Pilot is not production-ready"
+        },
+        "analysis_version": "ideal-notch-pilot-0.1",
+        "model_source": "https://arxiv.org/html/1410.3365v2#S1.E1"
+      }
+    },
+    {
+      "artifact": {
+        "artifact_path": "artifacts/bf7cab19e41fa752/scan_1.json",
+        "sha256": "3e8bf23083bbc2c01ada871a129bce967776d7b3cbb31b13abbd5e4b9552f51b"
+      },
+      "analysis": {
+        "reliable": true,
+        "reason": "quality_pass",
+        "fit": {
+          "resonance_hz": 6500951477.56156,
+          "loaded_q": 3909.849872205073,
+          "depth": 0.6007913854151221,
+          "linewidth_hz": 1662711.2779384442
+        },
+        "diagnostics": {
+          "fit_r2": 0.9995154544748318,
+          "residual_rms": 0.0019507523792956238,
+          "degrees_of_freedom": 479,
+          "checks": {
+            "fit_r2_at_least_0_95": true,
+            "not_at_scan_edge": true,
+            "at_least_four_linewidths": true,
+            "at_least_five_points_per_linewidth": true,
+            "not_at_fit_bound": true
+          }
+        },
+        "uncertainty": {
+          "status": "not_implemented",
+          "note": "Pilot is not production-ready"
+        },
+        "analysis_version": "ideal-notch-pilot-0.1",
+        "model_source": "https://arxiv.org/html/1410.3365v2#S1.E1"
+      }
+    }
+  ],
+  "outcome": {
+    "status": "s21_stage_complete",
+    "next_stage": "spectroscopy",
+    "proposed_updates": {
+      "readout_frequency_hz": 6500951477.56156
+    },
+    "reason": "The numerical S21 checks pass. Propose spectroscopy; full IQ acceptance has not been evaluated."
+  }
+}

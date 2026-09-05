@@ -1,0 +1,34 @@
+.DS_Store
+.venv/
+.conda-env/
+__pycache__/
+*.py[cod]
+
+# Local model and training artifacts
+models/
+checkpoints/
+evals/
+logs/
+cache/
+wandb/
+
+# Generated full/ablation datasets and hidden synthetic truth
+dataset/calibration_agent_policy.jsonl
+dataset/calibration_sft_q1_q9.jsonl
+dataset/calibration_trajectories.jsonl
+dataset/policy_*.jsonl
+dataset/train.jsonl
+dataset/validation.jsonl
+dataset/test.jsonl
+dataset/truth_audit_not_for_training.jsonl
+
+# Superseded bilingual v1.1 release; retained locally, excluded from the clean active-v2 release
+dataset/
+figures/
+src/generate_dataset.py
+src/inspect_tokens.py
+
+# Private or machine-local evidence
+evals/
+runs/
+docs/*_zh.md

@@ -1,0 +1,25 @@
+{
+  "schema_version": "ideal-notch-pilot-0.1",
+  "training_ready": false,
+  "scope": "ideal_calibrated_S21_only",
+  "devices": 12,
+  "counts": {
+    "train": 16,
+    "validation": 4,
+    "test": 4
+  },
+  "split_unit": "device; all scan scenarios stay together",
+  "split_seed": 20260904,
+  "source_sha256": {
+    "build_pilot.py": "46edabc2bd8a71141038a21e29280a2d0dd4ed14fa3a322e295b4221b1b6bdeb",
+    "s21.py": "535a9357be23ca152db60aebb46362cc39de2f617b7a569a8c3b163f552df0e8"
+  },
+  "limitations": [
+    "Not full tune-up trajectories",
+    "Not a live Agent adapter",
+    "No independent simulator validation",
+    "No fit uncertainty implementation",
+    "Legacy trainer is incompatible without v2 serialization/masking",
+    "No out-of-family evaluation"
+  ]
+}

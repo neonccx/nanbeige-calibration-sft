@@ -1,0 +1,83 @@
+{
+  "truth": {
+    "resonance_hz": 6499692573.2390175,
+    "loaded_q": 5767.687867464715,
+    "depth": 0.4940521226577667
+  },
+  "trace": [
+    {
+      "artifact": {
+        "artifact_path": "artifacts/fded025a167e8c81/scan_0.json",
+        "sha256": "ea170adbbd199222152b1036d38d2524a67e846ac6d229c40bdf7f9f53a42ece"
+      },
+      "analysis": {
+        "reliable": false,
+        "reason": "quality_rejected",
+        "fit": {
+          "resonance_hz": 6499692786.074611,
+          "loaded_q": 5765.648564611661,
+          "depth": 0.49380840439107454,
+          "linewidth_hz": 1127313.3825686774
+        },
+        "diagnostics": {
+          "fit_r2": 0.9993341303239663,
+          "residual_rms": 0.0020597908134541857,
+          "degrees_of_freedom": 479,
+          "checks": {
+            "fit_r2_at_least_0_95": true,
+            "not_at_scan_edge": false,
+            "at_least_four_linewidths": true,
+            "at_least_five_points_per_linewidth": true,
+            "not_at_fit_bound": true
+          }
+        },
+        "uncertainty": {
+          "status": "not_implemented",
+          "note": "Pilot is not production-ready"
+        },
+        "analysis_version": "ideal-notch-pilot-0.1",
+        "model_source": "https://arxiv.org/html/1410.3365v2#S1.E1"
+      }
+    },
+    {
+      "artifact": {
+        "artifact_path": "artifacts/fded025a167e8c81/scan_1.json",
+        "sha256": "dbe668244efbb7739b93f5e5aef591465790346b8effacb41fb8bfd907649d60"
+      },
+      "analysis": {
+        "reliable": false,
+        "reason": "quality_rejected",
+        "fit": {
+          "resonance_hz": 6499691556.700324,
+          "loaded_q": 5750.66707612362,
+          "depth": 0.49311905273561446,
+          "linewidth_hz": 1130250.016330558
+        },
+        "diagnostics": {
+          "fit_r2": 0.9989643703157864,
+          "residual_rms": 0.0019512096005645406,
+          "degrees_of_freedom": 479,
+          "checks": {
+            "fit_r2_at_least_0_95": true,
+            "not_at_scan_edge": true,
+            "at_least_four_linewidths": true,
+            "at_least_five_points_per_linewidth": false,
+            "not_at_fit_bound": true
+          }
+        },
+        "uncertainty": {
+          "status": "not_implemented",
+          "note": "Pilot is not production-ready"
+        },
+        "analysis_version": "ideal-notch-pilot-0.1",
+        "model_source": "https://arxiv.org/html/1410.3365v2#S1.E1"
+      }
+    }
+  ],
+  "outcome": {
+    "status": "stopped",
+    "next_stage": null,
+    "proposed_updates": {},
+    "reason": "S21 quality is insufficient after the scan budget. Do not advance or claim calibration success."
+  }
+}
