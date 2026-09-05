@@ -2,12 +2,12 @@
 
 ## Artifact
 
-The public adapter is packaged as `nanbeige4.2-3b-calibration-lora-v0.1.0-public.tar.gz` and should
+The public adapter is packaged as `nanbeige4.2-3b-calibration-lora-v0.1.0-release.tar.gz` and should
 be attached to the repository's `v0.1.0` GitHub release rather than committed to Git history.
 
 | Item | SHA-256 |
 | --- | --- |
-| release archive | `7ab2460cccf15b848d626ec4a1708d2cd323c58c29a2ac5c8b300ed758de90e6` |
+| release archive | `185c996cff2959fb1a245aa6e7348176811333207e06766b83420d336e1751f1` |
 | `adapter_model.safetensors` | `3675e7636b4a1c4a3667a40ca56c30d9fb7b7e2e7037c6bc603a27dc20eec661` |
 | public `adapter_config.json` | `011c30c2b1224e3fed2ad4ba4fb72d22a3b58516f197cdb53b179355bc77d63f` |
 | tokenizer configuration | `3edfa64a0826a77e9412b9008f1febf3fe906a68fd616b6de4cd15897a8c8518` |
@@ -16,6 +16,7 @@ The safetensors hash is identical to the frozen H100 training output. The public
 weights; it only replaces the machine-local base-model path in the PEFT configuration with the
 portable identifier `Nanbeige/Nanbeige4.2-3B` and replaces the generated placeholder README with a
 complete research model card. The original server artifact remains preserved separately.
+The release archive contains no AppleDouble files or macOS extended attributes.
 
 ## Load
 
