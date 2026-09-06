@@ -1,0 +1,26 @@
+{
+  "protocol": "calibration-step-0.3",
+  "samples": 1839,
+  "devices": {"train": 24, "validation": 4, "test": 4, "ood": 8},
+  "artifact_count": 1598,
+  "referenced_artifacts": 1598,
+  "targets": {
+    "sq.s21": 370,
+    "sq.s21_zpa2d": 155,
+    "sq.spectroscopy": 328,
+    "sq.piamp": 192,
+    "sq.ramsey_df": 113,
+    "sq.t1": 96,
+    "sq.t2_echo": 96,
+    "sq.xeb": 160,
+    "sq.iqraw": 161,
+    "FINISH": 80,
+    "ESCALATE_HARDWARE_REVIEW": 88
+  },
+  "artifact_hashes_valid": true,
+  "device_leakage": false,
+  "truth_leakage": false,
+  "zpa2d_shapes_valid": true,
+  "new_tools_present": true,
+  "audit_command": "PYTHONPATH=src python3 scripts/audit_dataset_v3.py /Users/soraka/lab/3/nanbeige-calibration-sft/dataset_v3"
+}

@@ -1,6 +1,22 @@
 # Dataset card
 
-## Active v2 dataset
+## Active v3 extension
+
+`dataset_v3/` contains 1,839 protocol `calibration-step-0.3` next-action examples over 40 virtual
+devices: 1,032/175/182/450 train/validation/test/OOD. It adds a complex frequency × normalized-ZPA
+S21 grid, periodic sweet-spot fitting, committed `z_bias`, bias-dependent spectroscopy and a synthetic
+single-qubit XEB-style decay stage. There are 155 ZPA2D and 160 XEB native-call targets.
+
+All 1,598 referenced acquisition artifacts are SHA-256 addressed. The audit validates rectangular
+ZPA2D axes/grid shapes, device-level split isolation and absence of hidden SQUID/XEB truth from model
+messages. `evaluator_only/` remains excluded from training. OOD includes drift, quasistatic noise,
+very high receiver noise, shifted/long-period flux sweet spots and deliberately sub-threshold XEB.
+
+The XEB stage is not multiqubit random-circuit-sampling XEB, a two-qubit benchmark or a coupler
+calibration. It is a single-qubit synthetic exponential-decay proxy; standard Clifford randomized
+benchmarking is generally more conventional for single-qubit gate characterization.
+
+## Preserved v2 dataset
 
 The active dataset is documented in [`dataset_v2/README.md`](dataset_v2/README.md) and
 [`docs/DATASET_V2.md`](docs/DATASET_V2.md). It contains 2,705 next-action examples from 304

@@ -1,0 +1,1272 @@
+{
+  "schema": "calibration-step-0.3",
+  "runtime_schema": "runtime-0.2",
+  "synthetic": true,
+  "physics_version": "reduced-cqed-flux-xeb-0.3",
+  "teacher": "observable_only_rule_policy_v3",
+  "training_ready": true,
+  "release_scope": "single_qubit_simulation_research_not_hardware_validated",
+  "data_origin": "executed reduced flux-transmon/cQED/XEB-style simulator; not experimental measurements",
+  "loss_scope": "one next assistant native call per sample; preceding context fully masked",
+  "device_counts": {
+    "train": 24,
+    "validation": 4,
+    "test": 4,
+    "ood": 8
+  },
+  "sample_counts": {
+    "train": 1032,
+    "validation": 175,
+    "test": 182,
+    "ood": 450
+  },
+  "outcomes": {
+    "train:accepted": 48,
+    "train:escalated": 48,
+    "validation:accepted": 8,
+    "validation:escalated": 8,
+    "test:accepted": 8,
+    "test:escalated": 8,
+    "ood:escalated": 24,
+    "ood:accepted": 16
+  },
+  "target_counts": {
+    "sq.s21": 370,
+    "sq.s21_zpa2d": 155,
+    "sq.spectroscopy": 328,
+    "sq.piamp": 192,
+    "sq.ramsey_df": 113,
+    "sq.t1": 96,
+    "sq.t2_echo": 96,
+    "sq.xeb": 160,
+    "sq.iqraw": 161,
+    "FINISH": 80,
+    "ESCALATE_HARDWARE_REVIEW": 88
+  },
+  "episodes": [
+    {
+      "episode_id": "1b7adce647e75c86da27",
+      "device_id": "9e069bbe075013fa",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "32e9ad3093ccbb97df6f",
+      "device_id": "9e069bbe075013fa",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "061331ac4f093f93d5d7",
+      "device_id": "9e069bbe075013fa",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "e8f5dcdf17d40954fc86",
+      "device_id": "9e069bbe075013fa",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "3e38f8615e120701a65f",
+      "device_id": "d0005d1fdf7d11be",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "ce35cf7c0cbf1c579a0a",
+      "device_id": "d0005d1fdf7d11be",
+      "split": "train",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "309dc3f6f8415078e617",
+      "device_id": "d0005d1fdf7d11be",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "ac758c39eb5ec404d096",
+      "device_id": "d0005d1fdf7d11be",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "0d37bb5330739938c6a2",
+      "device_id": "e21256459dab4361",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "2e7d3f61e8bc5e3c3a6a",
+      "device_id": "e21256459dab4361",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "b5815f5cd48939a5ba5a",
+      "device_id": "e21256459dab4361",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "920f476cb5f4c27cecb8",
+      "device_id": "e21256459dab4361",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "0831dccf726a5898701f",
+      "device_id": "828925e566051c0b",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "fb66232c3a78683bf691",
+      "device_id": "828925e566051c0b",
+      "split": "train",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "5a0938766137c27390b6",
+      "device_id": "828925e566051c0b",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "563cbbaee8257df4d900",
+      "device_id": "828925e566051c0b",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "ce74599b9442aef1a1da",
+      "device_id": "467283756630f19a",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "712f5b91367010a53167",
+      "device_id": "467283756630f19a",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "8dff6cf4bd3b2a3b9c41",
+      "device_id": "467283756630f19a",
+      "split": "train",
+      "status": "escalated",
+      "samples": 5
+    },
+    {
+      "episode_id": "d754a3969b7423c13048",
+      "device_id": "467283756630f19a",
+      "split": "train",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "af02c18fe0e40ee6e781",
+      "device_id": "50bc3ae569010209",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "8e43e9436e626802c363",
+      "device_id": "50bc3ae569010209",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "e002e1c9d9c19ded94bf",
+      "device_id": "50bc3ae569010209",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "d182e1abd47c3c4acbac",
+      "device_id": "50bc3ae569010209",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "fe7e0241b5dae3c2e52e",
+      "device_id": "4acd411c79f87eaa",
+      "split": "train",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "5083e93a217aeefe19f2",
+      "device_id": "4acd411c79f87eaa",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "9e2bd24985cae5a6e2b9",
+      "device_id": "4acd411c79f87eaa",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "8c5c258a895f108a0657",
+      "device_id": "4acd411c79f87eaa",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "7befdd7f6adc5d60af2b",
+      "device_id": "04dae5edaea38eaa",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "fd4c8d766c1309c05dca",
+      "device_id": "04dae5edaea38eaa",
+      "split": "train",
+      "status": "escalated",
+      "samples": 12
+    },
+    {
+      "episode_id": "46c341415da9a83b2d7c",
+      "device_id": "04dae5edaea38eaa",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "da6492df88e18cbabe63",
+      "device_id": "04dae5edaea38eaa",
+      "split": "train",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "c018b330c9946d67dbe8",
+      "device_id": "e3186f9b19658b9f",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "8ea53d1e51e1419bdffe",
+      "device_id": "e3186f9b19658b9f",
+      "split": "train",
+      "status": "escalated",
+      "samples": 12
+    },
+    {
+      "episode_id": "7ac681c14a2698791b19",
+      "device_id": "e3186f9b19658b9f",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "1e3431058576707d4e52",
+      "device_id": "e3186f9b19658b9f",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "4d490b74f44bf0283906",
+      "device_id": "252fb8a9302e868f",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "75f84d6976021f694175",
+      "device_id": "252fb8a9302e868f",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "d34d145d343921f3de1a",
+      "device_id": "252fb8a9302e868f",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "ccb36a6246deadc80837",
+      "device_id": "252fb8a9302e868f",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "ecaefca83694777876ae",
+      "device_id": "fc9de3f4aff7cf37",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "8b3bf8011bd06b98e109",
+      "device_id": "fc9de3f4aff7cf37",
+      "split": "train",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "783d333916c012bd78bb",
+      "device_id": "fc9de3f4aff7cf37",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "7a88d7cad945f87b616c",
+      "device_id": "fc9de3f4aff7cf37",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "d42243068d36c45f3d00",
+      "device_id": "fc95d4dc25422512",
+      "split": "train",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "4717babb2cc2eebe0480",
+      "device_id": "fc95d4dc25422512",
+      "split": "train",
+      "status": "escalated",
+      "samples": 12
+    },
+    {
+      "episode_id": "5f50e356ab44e10b2acb",
+      "device_id": "fc95d4dc25422512",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "1a93c6c23dfe004f46cd",
+      "device_id": "fc95d4dc25422512",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "7d3eed586f1f206c8846",
+      "device_id": "b6a9f68e1ffe0b33",
+      "split": "train",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "3b494c005d9cde6d632a",
+      "device_id": "b6a9f68e1ffe0b33",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "a7c1f32d0e4e89ffc4a1",
+      "device_id": "b6a9f68e1ffe0b33",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "b1caac1639343cdb156e",
+      "device_id": "b6a9f68e1ffe0b33",
+      "split": "train",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "5bd59c2d42edac56a260",
+      "device_id": "6f9f9e57f112a463",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "7428bba261cc1cac630c",
+      "device_id": "6f9f9e57f112a463",
+      "split": "train",
+      "status": "escalated",
+      "samples": 14
+    },
+    {
+      "episode_id": "56cc3938a61dc286dfa4",
+      "device_id": "6f9f9e57f112a463",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "6201fd8352547bbf6d6e",
+      "device_id": "6f9f9e57f112a463",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "06d2a9b1f6f8386d751e",
+      "device_id": "2ec3aa8f71701647",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "4252d60befd3c0daf1ae",
+      "device_id": "2ec3aa8f71701647",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "319858a1fc7a4f61d5f2",
+      "device_id": "2ec3aa8f71701647",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "5e569c96a8349369413c",
+      "device_id": "2ec3aa8f71701647",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "09a6a54b4c47c5347a7f",
+      "device_id": "b9a71afb7fd627a0",
+      "split": "train",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "aec3c482b9d56b95e54f",
+      "device_id": "b9a71afb7fd627a0",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "e65450719ae95c483034",
+      "device_id": "b9a71afb7fd627a0",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "7cb1044b74c54e52c14a",
+      "device_id": "b9a71afb7fd627a0",
+      "split": "train",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "4de736dcbd8b2defe7be",
+      "device_id": "609c092d35c64a95",
+      "split": "train",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "00d3e5f72a3c28ceaeaa",
+      "device_id": "609c092d35c64a95",
+      "split": "train",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "e5dec4bebe5f5d4b3418",
+      "device_id": "609c092d35c64a95",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "fc645f4d0dd56a2bcde3",
+      "device_id": "609c092d35c64a95",
+      "split": "train",
+      "status": "accepted",
+      "samples": 18
+    },
+    {
+      "episode_id": "1c7676238600fefd2b96",
+      "device_id": "e32568de6d4cc042",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "41c222fcb292f23a8d37",
+      "device_id": "e32568de6d4cc042",
+      "split": "train",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "4b859e9c3fd48b72d0dc",
+      "device_id": "e32568de6d4cc042",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "64d3521857f44c707ae9",
+      "device_id": "e32568de6d4cc042",
+      "split": "train",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "5424e48507186beda030",
+      "device_id": "1ac4a3c0e0118128",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "406b07120bf8e710cdbb",
+      "device_id": "1ac4a3c0e0118128",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "e9ff89fb3d920456388a",
+      "device_id": "1ac4a3c0e0118128",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "f394680125b5bb045648",
+      "device_id": "1ac4a3c0e0118128",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "45d9493d2fd16b129134",
+      "device_id": "a3c6ce2393aeb9b6",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "15d637104717993bf2ac",
+      "device_id": "a3c6ce2393aeb9b6",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "bde501f6fc0d3f40df5c",
+      "device_id": "a3c6ce2393aeb9b6",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "164fd115abf824c8130e",
+      "device_id": "a3c6ce2393aeb9b6",
+      "split": "train",
+      "status": "accepted",
+      "samples": 17
+    },
+    {
+      "episode_id": "4d67f89e77d9a2ac025f",
+      "device_id": "e6a712dbd37c4e49",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "7b42827a4fcf58134127",
+      "device_id": "e6a712dbd37c4e49",
+      "split": "train",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "9e1f5f5f3d38934c912c",
+      "device_id": "e6a712dbd37c4e49",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "29694edf6532b77bfdbd",
+      "device_id": "e6a712dbd37c4e49",
+      "split": "train",
+      "status": "accepted",
+      "samples": 18
+    },
+    {
+      "episode_id": "b2f39b679371b564a79d",
+      "device_id": "11ed5a28c1402ecf",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "dd4c6b25f1eeff96648f",
+      "device_id": "11ed5a28c1402ecf",
+      "split": "train",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "5dcd3dd77cd22188ed90",
+      "device_id": "11ed5a28c1402ecf",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "b9593b80658926d62503",
+      "device_id": "11ed5a28c1402ecf",
+      "split": "train",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "bcd9d3bc79513564ad3e",
+      "device_id": "0d8f712df91e15c1",
+      "split": "train",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "67fac59dfe80b714a778",
+      "device_id": "0d8f712df91e15c1",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "c8c49aa40a16fc35fbd7",
+      "device_id": "0d8f712df91e15c1",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "c750cc204f17223574d3",
+      "device_id": "0d8f712df91e15c1",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "3700db26ab908f6afb55",
+      "device_id": "b9ebc8bb4dea80bd",
+      "split": "train",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "8b321eecad67f747b825",
+      "device_id": "b9ebc8bb4dea80bd",
+      "split": "train",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "1714d2e72cad440b2f24",
+      "device_id": "b9ebc8bb4dea80bd",
+      "split": "train",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "d4c5f65cfcc08bc51348",
+      "device_id": "b9ebc8bb4dea80bd",
+      "split": "train",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "a7d036357a0999442f9d",
+      "device_id": "cc85d0df6bac390c",
+      "split": "validation",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "cb9d1bfb4f4f9191638b",
+      "device_id": "cc85d0df6bac390c",
+      "split": "validation",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "48517ffe46fc6784ead6",
+      "device_id": "cc85d0df6bac390c",
+      "split": "validation",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "2f20e113915f51b49ed8",
+      "device_id": "cc85d0df6bac390c",
+      "split": "validation",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "74afc8b54ede47832080",
+      "device_id": "aeaadb808ce32906",
+      "split": "validation",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "ee4431544f888f1ec6df",
+      "device_id": "aeaadb808ce32906",
+      "split": "validation",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "ca704a8d9765e6f26fb3",
+      "device_id": "aeaadb808ce32906",
+      "split": "validation",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "9615ebb172f8e875acf3",
+      "device_id": "aeaadb808ce32906",
+      "split": "validation",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "95f01cd7c4529312c3b7",
+      "device_id": "3db553303627514e",
+      "split": "validation",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "814fb9d2cdac00b297b7",
+      "device_id": "3db553303627514e",
+      "split": "validation",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "cddf2b4d6d6397c82b68",
+      "device_id": "3db553303627514e",
+      "split": "validation",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "b4675f0ecf62f67eff9c",
+      "device_id": "3db553303627514e",
+      "split": "validation",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "07e60d7d332d08e07173",
+      "device_id": "a27f95bff23c2166",
+      "split": "validation",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "6df155e6f50807733462",
+      "device_id": "a27f95bff23c2166",
+      "split": "validation",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "4f08f1cac39fb2f3cf33",
+      "device_id": "a27f95bff23c2166",
+      "split": "validation",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "e0ecb2cea96e76ab45f4",
+      "device_id": "a27f95bff23c2166",
+      "split": "validation",
+      "status": "accepted",
+      "samples": 16
+    },
+    {
+      "episode_id": "9489203d8439d3592a9e",
+      "device_id": "7d8f3c7cd281a00d",
+      "split": "test",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "7f37004abcb483df4dc2",
+      "device_id": "7d8f3c7cd281a00d",
+      "split": "test",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "847f6d35a6829118f7a9",
+      "device_id": "7d8f3c7cd281a00d",
+      "split": "test",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "93c5deb5c6a3dda782a7",
+      "device_id": "7d8f3c7cd281a00d",
+      "split": "test",
+      "status": "accepted",
+      "samples": 15
+    },
+    {
+      "episode_id": "bf79190aafdc87aa5bf2",
+      "device_id": "e7705f20a6f18892",
+      "split": "test",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "2899832c54bbc9924da9",
+      "device_id": "e7705f20a6f18892",
+      "split": "test",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "c72c1223461dcefb6c2a",
+      "device_id": "e7705f20a6f18892",
+      "split": "test",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "eb457fab8affc8dca9ed",
+      "device_id": "e7705f20a6f18892",
+      "split": "test",
+      "status": "accepted",
+      "samples": 18
+    },
+    {
+      "episode_id": "d250c21c1e13282072c9",
+      "device_id": "46be4ef55daee83a",
+      "split": "test",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "92c42e168df559994b2d",
+      "device_id": "46be4ef55daee83a",
+      "split": "test",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "b28810cae673691a8ba6",
+      "device_id": "46be4ef55daee83a",
+      "split": "test",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "5acb4f05d556461c1d9d",
+      "device_id": "46be4ef55daee83a",
+      "split": "test",
+      "status": "accepted",
+      "samples": 20
+    },
+    {
+      "episode_id": "0efdca1d860d30f75029",
+      "device_id": "71862c19698141ea",
+      "split": "test",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "73f0c212b1b2e7454da4",
+      "device_id": "71862c19698141ea",
+      "split": "test",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "83b87234311d17e18ec3",
+      "device_id": "71862c19698141ea",
+      "split": "test",
+      "status": "escalated",
+      "samples": 4
+    },
+    {
+      "episode_id": "4d6f5afea5a1457114df",
+      "device_id": "71862c19698141ea",
+      "split": "test",
+      "status": "accepted",
+      "samples": 17
+    },
+    {
+      "episode_id": "e896cf54a05d53ca8468",
+      "device_id": "0396e4e11244121a",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 12
+    },
+    {
+      "episode_id": "b4806403956735133d50",
+      "device_id": "0396e4e11244121a",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "c341a7dd99acd663fcc9",
+      "device_id": "0396e4e11244121a",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "602d386946b3a3d20275",
+      "device_id": "0396e4e11244121a",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "7e86006bf116cfc048b9",
+      "device_id": "0396e4e11244121a",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 10
+    },
+    {
+      "episode_id": "2ade2661d95d5ce1056e",
+      "device_id": "47ad7da123e4f159",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 12
+    },
+    {
+      "episode_id": "feb66e1fb846cd1b4ff8",
+      "device_id": "47ad7da123e4f159",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "00bf849702133f720f1c",
+      "device_id": "47ad7da123e4f159",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "5907023c3157215fe45f",
+      "device_id": "47ad7da123e4f159",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "ae64c6f38f5386253d14",
+      "device_id": "47ad7da123e4f159",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 10
+    },
+    {
+      "episode_id": "c2165256b3c0a4cc2eab",
+      "device_id": "8e81d1b7367142b1",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 14
+    },
+    {
+      "episode_id": "ea44bf661e8bd9595863",
+      "device_id": "8e81d1b7367142b1",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "9ffdf0c8ffe750f2af9a",
+      "device_id": "8e81d1b7367142b1",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "dbecf779cd869993e437",
+      "device_id": "8e81d1b7367142b1",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "30f1e59fb5fa1b4346a1",
+      "device_id": "8e81d1b7367142b1",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 10
+    },
+    {
+      "episode_id": "8a3cc1cf0d7e5f91337e",
+      "device_id": "fed4dd80bb918460",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "25ab2b791c7283289fc2",
+      "device_id": "fed4dd80bb918460",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "a0696c6e8b37f8c370c6",
+      "device_id": "fed4dd80bb918460",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "9f76fb6828fe08c918dd",
+      "device_id": "fed4dd80bb918460",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "c3a12bfe70031c0fe2a8",
+      "device_id": "fed4dd80bb918460",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 10
+    },
+    {
+      "episode_id": "ec796527a2f5adbce1bf",
+      "device_id": "c972be8708c5e3b6",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 13
+    },
+    {
+      "episode_id": "24f88311f6c1776de184",
+      "device_id": "c972be8708c5e3b6",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "1cc0651835287a2ca8e9",
+      "device_id": "c972be8708c5e3b6",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "412af2896c91ac735ab6",
+      "device_id": "c972be8708c5e3b6",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "522bfdf872e9474c33d6",
+      "device_id": "c972be8708c5e3b6",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 10
+    },
+    {
+      "episode_id": "e0e7bef034608eb52233",
+      "device_id": "57c47f8c825a3e59",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 12
+    },
+    {
+      "episode_id": "ffd5c85bd7a20bd55e9e",
+      "device_id": "57c47f8c825a3e59",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "d22526ec32cea84bf676",
+      "device_id": "57c47f8c825a3e59",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "f0ddf9a5f533aaf473da",
+      "device_id": "57c47f8c825a3e59",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "20da290fdf4e46cf6d10",
+      "device_id": "57c47f8c825a3e59",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 10
+    },
+    {
+      "episode_id": "98b0c2104ad17b3ed7c4",
+      "device_id": "be30d356970f6e20",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 11
+    },
+    {
+      "episode_id": "2d49849029da7847b471",
+      "device_id": "be30d356970f6e20",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 12
+    },
+    {
+      "episode_id": "d438c1f74da60c8bdf85",
+      "device_id": "be30d356970f6e20",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "bdfeb87ff51bc617d658",
+      "device_id": "be30d356970f6e20",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "132a57693ab7fb376208",
+      "device_id": "be30d356970f6e20",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 10
+    },
+    {
+      "episode_id": "7b8cb3d2515c3ae0a572",
+      "device_id": "c9cc449976cb905d",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 12
+    },
+    {
+      "episode_id": "fad51724ea925166b8ff",
+      "device_id": "c9cc449976cb905d",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 13
+    },
+    {
+      "episode_id": "5c1d13426d876881d995",
+      "device_id": "c9cc449976cb905d",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 9
+    },
+    {
+      "episode_id": "8f714d86bae4195754ed",
+      "device_id": "c9cc449976cb905d",
+      "split": "ood",
+      "status": "accepted",
+      "samples": 14
+    },
+    {
+      "episode_id": "97625898240e89a2d881",
+      "device_id": "c9cc449976cb905d",
+      "split": "ood",
+      "status": "escalated",
+      "samples": 10
+    }
+  ],
+  "source_sha256": {
+    "analysis_tools.py": "bda844d6182bbad56c935dfb6a9131b1170aaebef35621bd11b108de94f4bc0d",
+    "model_worker.py": "a081f1edf9a4355040bdcf51ecd8328d6fb60b991e0b8dfe693640c794fa1fb7",
+    "service.py": "20867aa657a4aeca4974da94867ad31c96f19cf54233b10eef694bd019764cce",
+    "terminal.py": "907f5d087196b44d52537be5beb1742c8cea2f0ed5246a03e70df6d9fc4c5ecd",
+    "remote.py": "74eb536de37cead42319b4801faad50c0d021c56b63fd81147278f79ca8e027c",
+    "conversation.py": "8c287d84d6ab72507f96e0d12bd16dbb399d5c85b44e87b318ee7a30f8dbbf7b",
+    "iq_report.py": "526da6bf6542c114a51dd059819df2b4969cfc037be0d7ca1ce47314511aa423",
+    "protocol.py": "fb30c775eadcfff4300cbbc3fb288aa889fa714d4db96ec16dd5684e61aa71df",
+    "terminal_design.py": "a8a5f1bf8fc8b06a11c92acdf9984a872dafbf26bfa69a0e905fb0381e4733a6",
+    "qcaleval.py": "cfff8254817500bf7ce86cf028428fbbe8533c53e3030839b13b1bd0e31cca53",
+    "parameter_tools.py": "bd9851fbcdc1b69ffb10699049095871e178cf8301bd935aae40f252f197ab23",
+    "session.py": "a262f9654b0bfa034458638f4547738319843d77e6e668582ae656d3e6bff485",
+    "__init__.py": "77350fab90dff34fafa1b2c6ac9a951a7e2847ed998bc7400817fbfdd23f4cc5",
+    "runtime.py": "10b7f9b9e78d88d47815d040b8f36616f455f64afff6f1500efb330d97daa925",
+    "markdown_view.py": "6bfe398e9ddff1476e0b1ee07cdffa26da67ae93c6003b8c84ff3b78900df3bc",
+    "report_preview.py": "ed7d7244adb2340f2e67cdd2d21f4cca27dc4b8925081150110c5264fcbbf59b",
+    "physics.py": "09177d9cd7768a980e1fefc6e1cd40f6c52c6c8ef5cbb8fbbd2ea2819c42ef31",
+    "backends.py": "45c3f914b4628a6f64bdda250717d63166aa1b9df3fe82b445b8eabff41ee89c",
+    "rpc.py": "77353c1f05e3c02f1b6fa37d6edd868840f7aa77dcd6120f94618eb31e5e8fdf",
+    "cli.py": "d3c5241f4ae1fb3013b9e64f81ffe9dfe31095d680fb598835e1caae37ba3156",
+    "storage.py": "d931e654f6798245cc6ccec0316762d497a51e4b79c45a45a4b7a12f8d5d368f",
+    "contracts.py": "c2348734165a92a9cbcbe25e83ecb0e92a47c0d992dc53d37e5832568632cf4a",
+    "settings.py": "1eab70015a00f35dfc0285a2e08da25601ea59ba39ca1ebb0a785bc98ac2e22e",
+    "fast_decode.py": "bcb0d9867d23c2867d1e10400e59268623cbfdd751494777fc7666aa19a76ccc",
+    "simulator.py": "19eb9eb94a9469eb502753589a1d3dcb1ff270bf18865f1fb2cf316174d81546",
+    "policies.py": "ee200627fc3e944192dbec7dabe6faa265dbdf556d99a4dc0a2bb1d40494487a",
+    "__main__.py": "307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7",
+    "physical_backend.py": "4629240a349f717012b049892a42540b37a09a9ccdb925190685cd5cc32e5683"
+  },
+  "split_sha256": {
+    "train": "3516b9217ba0cf15fa996cf4360febe0716e89d600afa96341d09490f3f1d720",
+    "validation": "ec2809d837cc536647eca250c6b854e44f3e99c2b6bc00dc2dc10c35b74ebb82",
+    "test": "ea4cb1bc036a53110bcc727741e94e2e6abf868b00203453ce2de29d40e394c8",
+    "ood": "05f0303bceacbb2eb0fbb12ffe0aeb353f966bcfb5cfb6846cf28f5f9d87876a"
+  },
+  "sources": [
+    "https://doi.org/10.1103/PhysRevA.76.042319",
+    "https://doi.org/10.1038/s41586-019-1666-5",
+    "https://doi.org/10.1063/1.5089550"
+  ],
+  "limitations": [
+    "Synthetic single-qubit XEB-style proxy, not a multiqubit XEB benchmark",
+    "Standard single-qubit randomized benchmarking is more conventional",
+    "Rule-teacher imitation is not proof of optimal hardware actions",
+    "Evaluator-only truth is never model input",
+    "No coupler or two-qubit physics"
+  ]
+}

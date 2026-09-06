@@ -80,7 +80,7 @@ def main() -> None:
     parser.add_argument("--max-train-samples", type=int, default=0, help="0 means all; nonzero only for smoke tests")
     parser.add_argument("--max-validation-samples", type=int, default=0, help="0 means all; nonzero only for smoke tests")
     parser.add_argument("--baseline-metrics", help="Existing pre-training metrics.json to record in run config")
-    parser.add_argument("--dataset-audit", help="Required tokenizer/artifact audit for native v2 data")
+    parser.add_argument("--dataset-audit", help="Required tokenizer/artifact audit for native tool-call data")
     parser.add_argument("--assistant-only-projection", action="store_true", help="Audited Nanbeige-only sparse vocabulary projection; decoder context is unchanged")
     parser.add_argument("--load-best-model", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--attn-implementation", choices=("sdpa", "eager"), default="sdpa")
@@ -122,7 +122,7 @@ def main() -> None:
     if first_row.get("tools"):
         manifest = json.loads((Path(args.train_file).parent/"manifest.json").read_text())
         if not args.baseline_metrics or not args.dataset_audit:
-            parser.error("Native v2 training requires a recorded pre-training baseline and dataset audit")
+            parser.error("Native tool-call training requires a recorded pre-training baseline and dataset audit")
         audit = json.loads(Path(args.dataset_audit).read_text())
         if not manifest.get("training_ready") or not audit.get("all_passed") or not audit.get("tokenizer_checked"):
             parser.error("Dataset/tokenizer release checks have not passed")
@@ -135,7 +135,7 @@ def main() -> None:
             if hashlib.sha256(Path(source).read_bytes()).hexdigest() != manifest["split_sha256"][split]:
                 parser.error("Training/validation split changed after release")
         if audit["max_tokens"] > args.max_length or args.allow_truncation:
-            parser.error("Native v2 requires complete, untruncated assistant targets")
+            parser.error("Native tool-call training requires complete, untruncated assistant targets")
     set_seed(args.seed)
 
     tokenizer = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True, use_fast=False, local_files_only=True)
