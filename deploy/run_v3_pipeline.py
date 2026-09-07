@@ -60,7 +60,7 @@ def main():
         for split in ("test", "ood"):
             run("baseline_"+split, launcher+[agent/"scripts/evaluate_policy_v2.py", "--model", model,
                 "--trust-remote-code", "--test-file", dataset/(split+".jsonl"),
-                "--output", root/("baseline_"+split), "--batch-size", "6"], agent)
+                "--output", root/("baseline_"+split), "--batch-size", "5"], agent)
         run("training", launcher+[project/"src/train_lora.py", "--model", model,
             "--train-file", dataset/"train.jsonl", "--validation-file", dataset/"validation.jsonl",
             "--output-dir", root/"training", "--baseline-metrics", root/"baseline_test"/"metrics.json",
@@ -74,7 +74,7 @@ def main():
             out = root/("sft_"+split)
             run("sft_"+split, launcher+[agent/"scripts/evaluate_policy_v2.py", "--model", model,
                 "--adapter", adapter, "--trust-remote-code", "--test-file", dataset/(split+".jsonl"),
-                "--output", out, "--batch-size", "6"], agent)
+                "--output", out, "--batch-size", "5"], agent)
             run("controller_"+split, launcher+[agent/"scripts/score_policy_predictions.py",
                 "--test-file", dataset/(split+".jsonl"), "--predictions", out/"predictions.jsonl",
                 "--output", out/"controller_score.json"], agent)
