@@ -28,8 +28,15 @@ def main():
              "model": str(model), "dataset": str(dataset),
              "verification_sha256": hashlib.sha256(args.verification.read_bytes()).hexdigest(),
              "scope": "Synthetic single-qubit v3 research; no hardware or coupler access",
-             "source_sha256": {str(path.relative_to(project)): hashlib.sha256(path.read_bytes()).hexdigest()
-                for path in (project/"src/train_lora.py", project/"src/assistant_loss.py", Path(__file__).resolve())}}
+             "source_sha256": {
+                label: hashlib.sha256(path.read_bytes()).hexdigest() for label, path in {
+                    "sft/src/train_lora.py": project/"src/train_lora.py",
+                    "sft/src/assistant_loss.py": project/"src/assistant_loss.py",
+                    "sft/deploy/run_v3_pipeline.py": Path(__file__).resolve(),
+                    "sft/deploy/h100-python.sh": project/"deploy/h100-python.sh",
+                    "agent/scripts/evaluate_policy_v2.py": agent/"scripts/evaluate_policy_v2.py",
+                    "agent/src/qmagent/policies.py": agent/"src/qmagent/policies.py",
+                }.items()}}
     launcher = ["bash", str(project/"deploy/h100-python.sh")]
     env = dict(os.environ, OPENBLAS_NUM_THREADS="1", PYTHONUNBUFFERED="1", PYTHONPATH=str(agent/"src"))
 

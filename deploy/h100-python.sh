@@ -13,6 +13,7 @@ export HF_HOME="$QCAL_BISHE/cache/huggingface"
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export TOKENIZERS_PARALLELISM=false
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export PYTHONDONTWRITEBYTECODE=1
 export OMP_NUM_THREADS=4
 export MKL_NUM_THREADS=4
