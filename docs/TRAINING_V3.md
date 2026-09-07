@@ -24,6 +24,9 @@ The local static audit passed:
 The ordered pipeline records the tokenizer/template audit and unmodified v3 test/OOD baseline before
 creating any adapter, then trains one epoch of BF16 LoRA (rank 32, alpha 64, dropout 0.05; effective
 batch 10), evaluates the frozen test/OOD sets and runs identical fresh-seed base/SFT closed loops.
+Frozen-context evaluation uses deterministic greedy decoding in batches of six. This batch size was
+validated on the H100 with 8k-token contexts and is recorded in every evaluation config and metrics
+file; the interactive one-request path is unchanged.
 
 ```bash
 cd /home/caochuangxin/bishe/Nanbeige4.2-3B
