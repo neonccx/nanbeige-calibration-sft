@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audited H100 baseline, LoRA training and v3 test/OOD/closed-loop evaluation."""
+"""Audited GPU baseline, LoRA training and v3 test/OOD/closed-loop evaluation."""
 import argparse
 import datetime
 import hashlib
@@ -13,11 +13,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--verification", type=Path, required=True)
+    parser.add_argument("--model", type=Path)
+    parser.add_argument("--agent", type=Path)
     args = parser.parse_args()
     project = Path(__file__).resolve().parents[1]
-    agent = project.parent/"quantum-calibration-agent"
-    model = project/"models/Nanbeige4.2-3B"
+    agent = (args.agent or project.parent/"quantum-calibration-agent").resolve()
+    model = (args.model or project/"models/Nanbeige4.2-3B").resolve()
     dataset = project/"dataset_v3"
+    if not (agent/"src/qmagent").is_dir():
+        raise ValueError(f"Agent source is missing: {agent}")
+    if not (model/"config.json").is_file():
+        raise ValueError(f"Model checkpoint is missing: {model}")
+    if not (dataset/"manifest.json").is_file():
+        raise ValueError(f"Dataset v3 is missing: {dataset}")
     verification = json.loads(args.verification.read_text())
     if not verification.get("all_passed") or len(verification.get("cases", [])) < 2:
         raise ValueError("Audited real-model sparse-loss verification is required")

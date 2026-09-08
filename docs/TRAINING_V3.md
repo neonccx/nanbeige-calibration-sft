@@ -47,3 +47,24 @@ The flux model uses the leading asymmetric-SQUID transmon approximation and redu
 not a multilevel solver or calibrated flux-line transfer function. The XEB-shaped decay is not a
 multiqubit random-circuit-sampling benchmark and does not replace standard single-qubit RB. No coupler,
 hardware backend or instrument call is present.
+
+## RTX 5090 failover
+
+The H100 host reported an uncorrectable row-remapping failure and repeated CUDA
+`cudaErrorContained` failures during inference. Those failed run directories are retained as
+diagnostic evidence and are not model results. The replacement run uses one RTX 5090, a dedicated
+venv that reuses server-local PyTorch/CUDA, and the same pinned Transformers/PEFT versions and
+frozen dataset. Explicit paths avoid copying or modifying the official base checkpoint:
+
+```bash
+cd /home/caochuangxin/bishe/nanbeige-calibration-sft
+CUDA_VISIBLE_DEVICES=1 \
+QCAL_BISHE=/home/caochuangxin/bishe \
+QCAL_PYTHON=/home/caochuangxin/bishe/envs/nanbeige5090/bin/python \
+nohup bash deploy/h100-python.sh deploy/run_v3_pipeline.py \
+  --model /home/caochuangxin/bishe/models/Nanbeige4.2-3B \
+  --agent /home/caochuangxin/bishe/quantum-calibration-agent \
+  --run-dir runs/v3_20260909_5090 \
+  --verification runs/prerequisites/assistant_loss_verification_v2.json \
+  > runs/v3_20260909_5090.launch.log 2>&1 &
+```

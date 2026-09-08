@@ -2,6 +2,7 @@
 # Server-local launcher: never change /usr/lib symlinks or global shell config.
 set -eu
 QCAL_BISHE=${QCAL_BISHE:-$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)}
+QCAL_PYTHON=${QCAL_PYTHON:-$QCAL_BISHE/envs/nanbeige445/bin/python}
 QCAL_KERNEL_VERSION=$(sed -n 's/.*Kernel Module  *\([^ ]*\).*/\1/p' /proc/driver/nvidia/version)
 if [ "$QCAL_KERNEL_VERSION" = "575.57.08" ]; then
     QCAL_CUDA=/usr/lib/x86_64-linux-gnu/libcuda.so.575.57.08
@@ -17,4 +18,4 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export PYTHONDONTWRITEBYTECODE=1
 export OMP_NUM_THREADS=4
 export MKL_NUM_THREADS=4
-exec "$QCAL_BISHE/envs/nanbeige445/bin/python" "$@"
+exec "$QCAL_PYTHON" "$@"
