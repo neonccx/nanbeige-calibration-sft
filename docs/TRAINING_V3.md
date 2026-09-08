@@ -24,7 +24,7 @@ The local static audit passed:
 The ordered pipeline records the tokenizer/template audit and unmodified v3 test/OOD baseline before
 creating any adapter, then trains one epoch of BF16 LoRA (rank 32, alpha 64, dropout 0.05; effective
 batch 10), evaluates the frozen test/OOD sets and runs identical fresh-seed base/SFT closed loops.
-Frozen-context evaluation uses deterministic greedy decoding in batches of five. This batch size was
+Frozen-context evaluation uses deterministic greedy decoding in batches of four. This batch size was
 validated on the H100 with 8k-token contexts and is recorded in every evaluation config and metrics
 file. The launcher enables expandable CUDA allocator segments and the evaluator releases inactive
 blocks between batches to avoid fragmentation from the model's full-sequence FP32 logits. The
@@ -33,9 +33,9 @@ interactive one-request path is unchanged.
 ```bash
 cd /home/caochuangxin/bishe/Nanbeige4.2-3B
 nohup bash deploy/h100-python.sh deploy/run_v3_pipeline.py \
-  --run-dir runs/v3_20260907_r2 \
+  --run-dir runs/v3_20260909_r3 \
   --verification runs/v2_20260904/assistant_loss_verification.json \
-  > runs/v3_20260907_r2.launch.log 2>&1 &
+  > runs/v3_20260909_r3.launch.log 2>&1 &
 ```
 
 Every output path is new. `status.json` preserves exact commands, stage return codes, timestamps and
