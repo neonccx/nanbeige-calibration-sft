@@ -5,9 +5,9 @@ Training, data and evaluation project for adapting
 a simulation-first single-qubit calibration loop. The experiment-executing runtime lives in the
 separate [quantum-calibration-agent](https://github.com/neonccx/quantum-calibration-agent) project.
 
-> Research status: v2 remains a frozen, completed one-epoch LoRA experiment. Dataset v3 independently
-> adds flux-ZPA2D and a single-qubit XEB-style proxy; it does not overwrite v2 evidence. Its retraining
-> and evaluation use a separate run directory and are reported separately.
+> Research status: v2 remains frozen. The independent v3 one-epoch LoRA run, full test/OOD comparison
+> and three-seed simulation closed loop are complete. The v3 adapter is published separately as
+> [release v0.2.0](https://github.com/neonccx/nanbeige-calibration-sft/releases/tag/v0.2.0).
 
 ## What the model learns
 
@@ -31,7 +31,7 @@ held-out IQ passes.
 | `src/train_lora.py` | Assistant-only BF16 LoRA trainer |
 | `src/assistant_loss.py` | Sparse assistant-token objective |
 | `src/calibration_v2/` | Shared v2 data and protocol utilities |
-| `deploy/` | Reproducible H100 launch, smoke and ordered evaluation scripts |
+| `deploy/` | Reproducible GPU launch, smoke, ordered evaluation and validated resume scripts |
 | `docs/TRAINING_V2.md` | Executed recipe, evidence and limitations |
 | `docs/TRAINING_V3.md` | v3 protocol, exact rerun command, results and blockers |
 | `docs/DATASET_V2.md` | Dataset contract and leakage boundary |
@@ -97,9 +97,9 @@ gradient accumulation 5 and the sparse assistant-token projection. Consult
 [`docs/TRAINING_V2.md`](docs/TRAINING_V2.md) for the full command, package versions and measured
 optimization diagnostics. Validation loss is not closed-loop calibration success.
 
-The v3 job uses the same audited BF16 LoRA method but a new baseline, tokenizer audit, output directory
-and adapter. The v2 release adapter must not be represented as v3-compatible. See
-[`docs/TRAINING_V3.md`](docs/TRAINING_V3.md).
+The v3 job used the same audited BF16 LoRA method but a new baseline, tokenizer audit, output directory
+and adapter. It completed 103 optimizer steps with train loss 0.11776. The v2 release adapter must not
+be represented as v3-compatible. See [`docs/TRAINING_V3.md`](docs/TRAINING_V3.md).
 
 ## Evaluate
 
@@ -112,6 +112,20 @@ Evaluation has three distinct tracks:
 The B0/B1/F0/F1 ablation changes only the calibration system instruction (`minimal` versus `skill`)
 while keeping weights, native tools, public context, controller, simulator, seeds and decoding fixed.
 QCalEval plot scores must never be merged with closed-loop IQ acceptance.
+
+### Completed v3 result
+
+| Split / policy | Valid | Next tool | Arguments | Controller-executable |
+| --- | ---: | ---: | ---: | ---: |
+| test base (182) | 0.9176 | 0.5604 | 0.1044 | not scored |
+| test SFT (182) | 1.0000 | 0.9780 | 0.9341 | 0.9890 |
+| OOD base (450) | 0.9311 | 0.6000 | 0.0889 | not scored |
+| OOD SFT (450) | 1.0000 | 0.9089 | 0.8689 | 0.9222 |
+
+On the same three fresh simulator seeds, the base model accepted 0/3 episodes and v3 SFT accepted
+2/3 (12 and 13 experiments). Both successes ended with two independent held-out IQ passes. See the
+[path-free evidence JSON](evaluation/public_evidence_v3_20260909.json). These are simulation results,
+not hardware results.
 
 ## Safety and scope
 

@@ -19,7 +19,7 @@ The local static audit passed:
 - rectangular ZPA2D axes and I/Q shapes valid;
 - no device split overlap and no named simulator-truth field in model-visible rows.
 
-## H100 job
+## Ordered GPU job
 
 The ordered pipeline records the tokenizer/template audit and unmodified v3 test/OOD baseline before
 creating any adapter, then trains one epoch of BF16 LoRA (rank 32, alpha 64, dropout 0.05; effective
@@ -48,7 +48,7 @@ not a multilevel solver or calibrated flux-line transfer function. The XEB-shape
 multiqubit random-circuit-sampling benchmark and does not replace standard single-qubit RB. No coupler,
 hardware backend or instrument call is present.
 
-## RTX 5090 failover
+## Executed RTX 5090 run
 
 The H100 host reported an uncorrectable row-remapping failure and repeated CUDA
 `cudaErrorContained` failures during inference. Those failed run directories are retained as
@@ -68,3 +68,26 @@ nohup bash deploy/h100-python.sh deploy/run_v3_pipeline.py \
   --verification runs/prerequisites/assistant_loss_verification_v2.json \
   > runs/v3_20260909_5090.launch.log 2>&1 &
 ```
+
+The run completed one epoch and 103 optimizer steps with BF16 LoRA rank 32, alpha 64, dropout 0.05,
+effective batch 10 and assistant-only sparse projection. Training loss was 0.1177623 and recorded
+training runtime was 5,678.3 seconds.
+
+The shared server was under contention: the first ordered process was terminated during SFT OOD
+evaluation and a later attempt encountered GPU memory pressure while unrelated jobs occupied all four
+GPUs. Completed training and prior evaluations were left immutable. The recovery script validated the
+configuration, dataset hash and exact 100-record prediction-ID prefix before appending the remaining
+350 OOD predictions. It then ran controller scoring and both fresh-seed closed loops. The recovery
+status is `completed_with_failures` because failed scientific episodes deliberately return nonzero.
+
+| Split / policy | Valid | Next tool | Arguments | Controller-executable | Mean latency |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| test base (182) | 0.9176 | 0.5604 | 0.1044 | not scored | 3.94 s |
+| test SFT (182) | 1.0000 | 0.9780 | 0.9341 | 0.9890 | 3.52 s |
+| OOD base (450) | 0.9311 | 0.6000 | 0.0889 | not scored | 3.68 s |
+| OOD SFT (450) | 1.0000 | 0.9089 | 0.8689 | 0.9222 | 3.48 s |
+
+The base policy accepted 0/3 fresh-seed simulated episodes. SFT accepted 2/3 in 13 and 12
+experiments; both ended with two independent held-out IQ passes. The third ended in a recorded policy
+error after three experiments. The versioned adapter archive has SHA-256
+`75c2c83a9ff6797ec5803dede08839bcb77138d9200f631e1c65470cff27bb69`.

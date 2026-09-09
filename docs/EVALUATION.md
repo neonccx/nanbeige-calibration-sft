@@ -40,6 +40,23 @@ schema, full workflow instruction and reference HF decoder. Invalid outputs coun
 These are frozen-context imitation and executability metrics, not closed-loop or hardware success.
 The OOD latency increase is reported as observed and has not yet been attributed to one cause.
 
+## Independent v3 result
+
+Dataset v3 adds native ZPA2D and single-qubit XEB-style decisions. It was trained and evaluated from
+the unmodified base checkpoint in a separate run and does not replace the v2 result.
+
+| Split / policy | Valid | Next tool | Arguments | Controller-executable | Mean latency |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| test base (182) | 0.9176 | 0.5604 | 0.1044 | not scored | 3.94 s |
+| test SFT (182) | 1.0000 | 0.9780 | 0.9341 | 0.9890 | 3.52 s |
+| OOD base (450) | 0.9311 | 0.6000 | 0.0889 | not scored | 3.68 s |
+| OOD SFT (450) | 1.0000 | 0.9089 | 0.8689 | 0.9222 | 3.48 s |
+
+On three identical fresh simulator seeds, base accepted 0/3 and SFT accepted 2/3. The two SFT
+successes used 13 and 12 experiments and ended with two independent held-out IQ passes; the remaining
+episode recorded a policy error. The exact path-free record and hashes are in
+[`evaluation/public_evidence_v3_20260909.json`](../evaluation/public_evidence_v3_20260909.json).
+
 ## Closed-loop and fit-tool verification
 
 On three fresh simulator seeds, the original base policy accepted 0/3 episodes. The original SFT

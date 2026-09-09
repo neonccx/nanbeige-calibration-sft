@@ -1,0 +1,90 @@
+{
+  "schema": "nanbeige-calibration-public-evidence-v1",
+  "protocol": "calibration-step-0.3",
+  "date": "2026-09-09",
+  "scope": "Simulation-only next-action SFT and closed-loop evaluation; not hardware validation",
+  "base_model": "Nanbeige/Nanbeige4.2-3B",
+  "method": {
+    "type": "PEFT LoRA supervised fine-tuning",
+    "epochs": 1,
+    "precision": "BF16",
+    "rank": 32,
+    "alpha": 64,
+    "dropout": 0.05,
+    "micro_batch": 2,
+    "gradient_accumulation": 5,
+    "effective_batch": 10,
+    "assistant_only_projection": true,
+    "seed": 20260813,
+    "optimizer_steps": 103,
+    "train_loss": 0.1177622808812602,
+    "train_runtime_seconds": 5678.2628
+  },
+  "dataset": {
+    "train": 1032,
+    "validation": 175,
+    "test": 182,
+    "ood": 450,
+    "artifact_count": 1598,
+    "tokenizer_audit_passed": true,
+    "max_tokens": 8096,
+    "sha256": {
+      "manifest.json": "b6ef28c417bad353f146d2b30bb520ec86f1dff65781447600119efb95f22c3b",
+      "audit_report.json": "a8d1fd9209d1aaca0d8bf42465c2e44de889d4fcfa459b458cb1677c2c355677",
+      "train.jsonl": "3516b9217ba0cf15fa996cf4360febe0716e89d600afa96341d09490f3f1d720",
+      "validation.jsonl": "ec2809d837cc536647eca250c6b854e44f3e99c2b6bc00dc2dc10c35b74ebb82",
+      "test.jsonl": "ea4cb1bc036a53110bcc727741e94e2e6abf868b00203453ce2de29d40e394c8",
+      "ood.jsonl": "05f0303bceacbb2eb0fbb12ffe0aeb353f966bcfb5cfb6846cf28f5f9d87876a",
+      "tokenizer_audit.json": "7be7405864c6f7bc5b9b853a9742574cf4be4df2eb96e420acd908af41457d7b"
+    }
+  },
+  "frozen_context": {
+    "test": {
+      "samples": 182,
+      "base": {"valid": 0.9175824175824175, "next_tool": 0.5604395604395604, "arguments": 0.1043956043956044, "mean_seconds": 3.9369882071545224},
+      "sft": {"valid": 1.0, "next_tool": 0.978021978021978, "arguments": 0.9340659340659341, "controller_executable": 0.989010989010989, "mean_seconds": 3.5171714584233755}
+    },
+    "ood": {
+      "samples": 450,
+      "base": {"valid": 0.9311111111111111, "next_tool": 0.6, "arguments": 0.08888888888888889, "mean_seconds": 3.6822446343047908},
+      "sft": {"valid": 1.0, "next_tool": 0.9088888888888889, "arguments": 0.8688888888888889, "controller_executable": 0.9222222222222223, "mean_seconds": 3.4849438080159274}
+    }
+  },
+  "closed_loop": {
+    "seeds": [2026090650, 2026090651, 2026090652],
+    "base": {"accepted": 0, "episodes": 3, "acceptance_rate": 0.0, "failures": {"invalid_action": 2, "policy_error": 1}},
+    "sft": {
+      "accepted": 2,
+      "episodes": 3,
+      "acceptance_rate": 0.6666666666666666,
+      "mean_experiments_success": 12.5,
+      "failures": {"policy_error": 1},
+      "accepted_episode_iq": [
+        {"episode": 0, "experiments": 13, "consecutive_passes": 2, "f0": 0.982421875, "f1": 0.978515625, "assignment_fidelity": 0.98046875, "visibility": 0.9609375, "snr": 3.1134178681239457},
+        {"episode": 1, "experiments": 12, "consecutive_passes": 2, "f0": 0.978515625, "f1": 0.970703125, "assignment_fidelity": 0.974609375, "visibility": 0.94921875, "snr": 2.97058158502296}
+      ]
+    }
+  },
+  "artifact": {
+    "release": "v0.2.0",
+    "archive": "nanbeige4.2-3b-calibration-lora-v0.2.0.tar.gz",
+    "archive_sha256": "75c2c83a9ff6797ec5803dede08839bcb77138d9200f631e1c65470cff27bb69",
+    "adapter_weights_sha256": "615edcdd90dca22acb7b59f40268d115b90ed74d07255bb9e15b71685de28c67",
+    "adapter_config_sha256": "0afa07abf1c82bd8a83002fa63632c86f25eb984f5515673975accfff42011bc",
+    "tokenizer_model_sha256": "fb41d04798b714520a9b075727b0226538b7330254299062742c50ec8374bc36"
+  },
+  "source": {
+    "training_repository_commit": "9f8bbcd1ca12a8e16b657b492c81ab0b31c58556",
+    "agent_repository_commit": "33799bd5ef0c4f78cc88397c61c69701ea7fe51e",
+    "training_source_sha256": "b4ef4b7d20c53b85d9f0981a9f0c6988f4dd742cd45063cd4b4619740d2924c0",
+    "assistant_loss_sha256": "6ad9437b7a1f4df261ddb8af57af3a762608fc9709f697608a12d0cbe6341a56"
+  },
+  "recovery_note": "The original ordered run was interrupted during SFT OOD evaluation while the shared GPU server was under contention. A validated resume path verified immutable configuration, dataset hash and prediction-ID prefix, appended the remaining 350 of 450 predictions, and then ran controller and fresh-seed closed-loop evaluation. Nonzero closed-loop process returns record scientific episode failures, not missing artifacts.",
+  "limitations": [
+    "All measurements are synthetic and no instrument adapter is enabled.",
+    "Three closed-loop seeds are engineering evidence, not a statistical hardware-success estimate.",
+    "The XEB stage is a single-qubit synthetic decay proxy, not multiqubit XEB.",
+    "The adapter depends on the matching workflow prompt, registered analysis tools and strict controller.",
+    "Base-model weights are not included in the release."
+  ]
+}

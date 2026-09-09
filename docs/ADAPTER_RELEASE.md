@@ -1,5 +1,23 @@
 # LoRA adapter release
 
+## v0.2.0 (v3 protocol)
+
+The current v3 adapter is packaged as `nanbeige4.2-3b-calibration-lora-v0.2.0.tar.gz` and attached to
+the repository's `v0.2.0` GitHub release.
+
+| Item | SHA-256 |
+| --- | --- |
+| release archive | `75c2c83a9ff6797ec5803dede08839bcb77138d9200f631e1c65470cff27bb69` |
+| `adapter_model.safetensors` | `615edcdd90dca22acb7b59f40268d115b90ed74d07255bb9e15b71685de28c67` |
+| public `adapter_config.json` | `0afa07abf1c82bd8a83002fa63632c86f25eb984f5515673975accfff42011bc` |
+| `tokenizer.model` | `fb41d04798b714520a9b075727b0226538b7330254299062742c50ec8374bc36` |
+
+This adapter targets native protocol `calibration-step-0.3`, including ZPA2D and the documented
+single-qubit XEB-style proxy. Its evaluation is recorded in
+[`public_evidence_v3_20260909.json`](../evaluation/public_evidence_v3_20260909.json).
+
+## v0.1.0 (preserved v2 protocol)
+
 ## Artifact
 
 The public adapter is packaged as `nanbeige4.2-3b-calibration-lora-v0.1.0-github-release.tar.gz` and should
